@@ -7,11 +7,10 @@
  */
 
 /**
- * Description of bootstrap
+ * Description of controller
  *
  * @author Administrator
  */
-//Load Libraries
-require_once 'libraries/Core.php';
-require_once 'libraries/Controller.php';
-require_once 'libraries/Database.php';
+class controller {
+    //put your code here
+}

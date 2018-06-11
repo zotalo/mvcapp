@@ -7,11 +7,15 @@
  */
 
 /**
- * Description of bootstrap
+ * Description of core
  *
  * @author Administrator
  */
-//Load Libraries
-require_once 'libraries/Core.php';
-require_once 'libraries/Controller.php';
-require_once 'libraries/Database.php';
+/*
+ * App Core Class
+ * Creates URL & loads core controller
+ * URL FORMAT - /controller/method/params
+ */
+class Core {
+    //put your code here
+}
