@@ -7,11 +7,12 @@
  */
 
 /**
- * Description of controller
+ * Description of Pages
  *
  * @author Administrator
  */
-class controller {
-  
-    //put your code here
+class Pages {
+   public function __construct() {
+       echo 'Pages loaded';
+   }
 }
