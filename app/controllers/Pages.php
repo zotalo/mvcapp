@@ -12,5 +12,7 @@
  * @author Administrator
  */
 class Pages {
-    //put your code here
+   public function __construct() {
+       echo 'Pages loaded';
+   }
 }

@@ -34,13 +34,15 @@ class Core {
             unset($url[0]);
         }
         //Require the controller
-        require_once '../app/controllers/'. $this->currentController / '.php';
+        require_once '../app/controllers/'. $this->currentController . '.php';
         
         //instantiate controller class
         $this->currentController = new $this->currentController;
+        
+        
     }
     public function getUrl(){
-        if(isset(filter_input($_GET['url']))){
+        if(isset($_GET['url'])){
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
