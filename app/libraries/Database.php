@@ -7,19 +7,10 @@
  */
 
 /**
- * Description of Pages
+ * Description of database
  *
  * @author Administrator
  */
-class Pages {
-   public function __construct() {
-    //   echo 'Pages loaded';
-   }
-   
-   public function index(){
-       
-   }
-   public function about($id){
-       echo $id;
-   }
+class database {
+    //put your code here
 }

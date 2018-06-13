@@ -7,19 +7,14 @@
  */
 
 /**
- * Description of Pages
+ * Description of controller
  *
  * @author Administrator
+ * Base Controller
+ * Loads the models and views
+ * 
  */
-class Pages {
-   public function __construct() {
-    //   echo 'Pages loaded';
-   }
-   
-   public function index(){
-       
-   }
-   public function about($id){
-       echo $id;
-   }
+class Controller {
+  
+    //put your code here
 }
