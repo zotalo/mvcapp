@@ -47,6 +47,12 @@ class Core {
             }
         }
         
+        // Get params
+        $this->params = $url ? array_values($url) : [];
+        
+        //call a callback with 
+        
+        
     }
     public function getUrl(){
         if(isset($_GET['url'])){
