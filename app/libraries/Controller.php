@@ -12,7 +12,6 @@
  * @author Administrator
  * Base Controller
  * Loads the models and views
- * 
  */
 class Controller {
   // Load model
