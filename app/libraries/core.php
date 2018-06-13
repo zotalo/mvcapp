@@ -18,7 +18,7 @@
  */
 class Core {
     protected $currentController = 'Pages';
-    protected $currenteMethod = 'index';
+    protected $currentMethod = 'index';
     protected $params = [];
     
     public function __construct(){
@@ -39,6 +39,13 @@ class Core {
         //instantiate controller class
         $this->currentController = new $this->currentController;
         
+        //check for second part of url
+        if(isset($url[1])){
+            //check to see if method exists in controller
+            if(method_exists($this->currentController, $url[1])){
+                $this->currentMethod = $url[1];
+            }
+        }
         
     }
     public function getUrl(){
