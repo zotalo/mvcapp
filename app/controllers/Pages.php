@@ -11,16 +11,16 @@
  *
  * @author Administrator
  */
-class Pages {
+class Pages extends Controller{
    public function __construct() {
     //   echo 'Pages loaded';
    }
    
    public function index(){
-       
+       $this->view('index');
    }
-   public function about($id){
-       echo $id;
+   public function about(){
+       $this->view('index');
        
    }
 }
