@@ -1,6 +1,6 @@
 <?php 
 
-//Controller for users test
+//Controller for users
 class Users {
     public function __construct(){
 
