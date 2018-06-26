@@ -1,14 +1,14 @@
 <?php
 //DB_PARAMS
 define('DB_HOST', 'localhost');
-define('DB_USER', '_YOUR_USER');
-define('DB_PASS', '_YOUR_PASS');
-define('DB_NAME', '_YOUR_DBNAME_');
+define('DB_USER', 'teadmin');
+define('DB_PASS', '~te@DBadm1n!');
+define('DB_NAME', 'tea_soeldb');
 
 
 //App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 //Url Root
-define('URLROOT', '_YOUR_URL_');
+define('URLROOT', 'http://localhost/teaprotocol');
 //Site Name
-define('SITENAME', '_YOUR_SITENAME_');
+define('SITENAME', 'TEAprotocol');
