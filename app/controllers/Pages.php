@@ -21,7 +21,7 @@ class Pages extends Controller{
        
        $data = [
            'title' => 'TEA-SOEL Protocol',
-           
+           'description' => 'Application For TEA-SOEL Protocol'
        ];
        
        
@@ -29,7 +29,8 @@ class Pages extends Controller{
    }
    public function about(){
        $data = [
-           'title' => 'About'
+           'title' => 'About',
+           'description' => 'Application For TEA-SOEL Protocol'
        ];
        $this->view('pages/about', $data);
        
