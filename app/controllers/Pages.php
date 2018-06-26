@@ -20,7 +20,7 @@ class Pages extends Controller{
     
        
        $data = [
-           'title' => 'MVC PHP',
+           'title' => 'TEA-SOEL Protocol',
            
        ];
        
