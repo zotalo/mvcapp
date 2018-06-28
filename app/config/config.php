@@ -13,6 +13,6 @@ define('URLROOT', 'http://localhost/teaprotocol');
 //Site Name
 define('SITENAME', 'TEA-Protocol');
 //App Version
-define('APPVERSION', '1.0.0');
+define('APPVERSION', '1.0.0-1806');
 //Author
 define('APPDEVELOPER', 'George Siorokos');
