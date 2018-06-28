@@ -9,7 +9,7 @@ define('DB_NAME', 'tea_soeldb');
 //App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 //Url Root
-define('URLROOT', 'http://192.168.0.131/teaprotocol');
+define('URLROOT', 'http://localhost/teaprotocol');
 //Site Name
 define('SITENAME', 'TEA-Protocol');
 //App Version
