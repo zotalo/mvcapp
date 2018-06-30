@@ -3,7 +3,7 @@
 
 class Users extends Controller{
     public function __construct(){
-
+        $this->userModel = $this->model('User');
     }
 
     public function register(){
@@ -88,12 +88,32 @@ class Users extends Controller{
                 'email_err' => '',
                 'password_err' => '',
             ];
+
+            // Validate Email
+            if(empty($data['email'])){
+                $data['email_err'] = 'Please enter email';
+            }
+
+            // Validate Password
+            if(empty($data['password'])){
+                $data['password_err'] = 'Please enter password';
+            }
+
+            //Make sure errors are empty
+            if(empty($data['email_err']) && empty($data['password_err'])){
+                // Validated
+                die('SUCCESS');
+            } else {
+                // Load view with errors
+                $this->view('users/login', $data);
+            }
+
         }
         else {
             //Init data
             $data = [
-                'email' => trim($_POST['email']),
-                'password' => trim($_POST['password']),
+                'email' => '',
+                'password' => '',
                 'email_err' => '',
                 'password_err' => '',
             ];
