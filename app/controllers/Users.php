@@ -132,7 +132,7 @@ class Users extends Controller{
                     //Create Session
                     die('SUCCESS');
                 } else{
-                    $data['password_err']= 'Password incorrect';
+                    $data['password_err'] = 'Password incorrect';
                     $this->view('user/login', $data);
                 }
             } else {
