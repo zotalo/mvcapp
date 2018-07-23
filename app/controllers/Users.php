@@ -98,8 +98,8 @@ class Users extends Controller{
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
              //Init data
              $data = [
-                'email' => '',
-                'password' => '',
+                'email' => trim($_POST['email']),
+                'password' => trim($_POST['password']),
                 'email_err' => '',
                 'password_err' => '',
             ];
@@ -118,7 +118,6 @@ class Users extends Controller{
             if($this->userModel->findUserByEmail($data['email'])){
                 //user found
             } else {
-                echo $data['email'];
                 $data['email_err'] = 'No user found';
             }
 
