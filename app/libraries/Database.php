@@ -1,16 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of database
- *
- * @author Administrator
- * PDO Database Class
+/* PDO Database Class
  * Connect to database
  * Create prepared statements
  * Bind values
