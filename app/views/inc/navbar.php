@@ -14,6 +14,9 @@
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/protocol">Protocol</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?php echo URLROOT; ?>/posts/index">Posts</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">About</a>
           </li>
         </ul>
