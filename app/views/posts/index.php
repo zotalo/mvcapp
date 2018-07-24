@@ -14,9 +14,13 @@
             <h4 class="card-title">
                 <?php echo $post->title; ?>
             </h4>
-            <div>
-                <?php echo $post->body; ?>
+            <div class="bg-light p2 mb-3">
+                written by <?php echo $post->username; ?> on <?php echo $post->postCreated; ?>
             </div>
+            <p class="card-text">
+                <?php echo $post->body; ?>
+            </p>
+            <a href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark">More</a>
         </div>
     <?php endforeach; ?>
 <?php require APPROOT . '/views/inc/footer.php';?>
