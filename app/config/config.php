@@ -11,7 +11,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 //Url Root
 define('URLROOT', 'http://localhost/teaprotocol');
 //Site Name
-define('SITENAME', 'TEA-Protocol');
+define('SITENAME', 'Πρωτόκολλο ΤΕΑ');
 //App Version
 define('APPVERSION', '1.0.0-1806');
 //Author
