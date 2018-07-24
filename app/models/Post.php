@@ -6,7 +6,7 @@
             $this->db = new Database;
         }
 
-        public function getPost(){
+        public function getPosts(){
             $this->db->query('SELECT * FROM posts');
 
             $results = $this->db->resultSet();
