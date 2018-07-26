@@ -40,7 +40,13 @@
 
                 //Make sure no errors
                 if(empty($data['title_err']) && empty($data['body_err'])){
-                    die('SUCCESS');
+                    //Validated
+                    if($this->postModel->addPost($data)){
+                        flash('post_message', 'Post Added');
+                        redirect('posts');
+                    } else {
+                        die('Something went wrong');
+                    }
                 }else {
                     // Load view with errors
                     $this->view('posts/add', $data);
