@@ -20,8 +20,8 @@ class Pages extends Controller{
     
        
        $data = [
-           'title' => 'TEA-SOEL Protocol',
-           'description' => 'Application For TEA-SOEL Protocol'
+           'title' => 'Πρωτόκολλο ΤΕΑ-ΣΟΕΛ',
+           'description' => 'Εφαρμογή δημιουργίας πρωτοκόλλου'
        ];
        
        
