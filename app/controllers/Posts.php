@@ -61,4 +61,14 @@
             }
                  
         }
+
+        public function show($id){
+            $post = $this->postModel->getPostById($id);
+
+            $data = [
+                'post' => $post
+            ];
+            $this->view('posts/show', $data);
+
+        }
     }
