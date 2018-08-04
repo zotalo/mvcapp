@@ -14,7 +14,7 @@
                             users.userlog as userCreated
                              FROM posts
                              INNER JOIN users
-                             ON posts.user_id = users.userid
+                             ON posts.userId = users.userid
                              ORDER BY posts.created DESC
                              ');
 
@@ -24,11 +24,11 @@
         }
 
         public function addPost($data){
-            $this->db->query('INSERT INTO posts (title, user_id, body) VALUES (:title, :user_id, :body)');
+            $this->db->query('INSERT INTO posts (title, userId, body) VALUES (:title, :userId, :body)');
             //Bind values
             $this->db->bind(':title', $data['title']);
             $this->db->bind(':body', $data['body']);
-            $this->db->bind(':user_id', $data['user_id']);
+            $this->db->bind(':userId', $data['userId']);
 
             //Execute
             if($this->db->execute()){

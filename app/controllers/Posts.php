@@ -5,6 +5,7 @@
                 redirect('users/login');
             }
             $this->postModel = $this->model('Post');
+            $this->userModel = $this->model('User');
         }
         public function index(){
             //Get posts
@@ -25,7 +26,7 @@
                 $data = [
                     'title'=> trim($_POST['title']),
                     'body'=> trim($_POST['body']),
-                    'user_id' => $_SESSION['user_id'],
+                    'userId' => $_SESSION['user_id'],
                     'tittle_err' => '',
                     'body_err' => ''
                 ];
@@ -64,9 +65,12 @@
 
         public function show($id){
             $post = $this->postModel->getPostById($id);
+            $user = $this->userModel->getUserById($post->userId);
 
             $data = [
-                'post' => $post
+                'post' => $post,
+                'user' => $user
+
             ];
             $this->view('posts/show', $data);
 
