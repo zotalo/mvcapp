@@ -69,6 +69,7 @@
                 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
                 
                 $data = [
+                    'id'=> $id,
                     'title'=> trim($_POST['title']),
                     'body'=> trim($_POST['body']),
                     'userId' => $_SESSION['user_id'],
@@ -126,5 +127,18 @@
             ];
             $this->view('posts/show', $data);
 
+        }
+
+        public function delete($id){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                if($this->postModel->deletePost($id)){
+                    flash('post_message', 'Post Removed');
+                    redirect('posts');
+                } else {
+                    die('Something went wrong');
+                }
+            } else {
+                redirect('posts');
+            }
         }
     }
