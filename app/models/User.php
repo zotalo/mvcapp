@@ -24,7 +24,12 @@
         }
         // Login User
         public function login($email, $password){
-            $this->db->query('SELECT * FROM users WHERE email = :email');
+            $this->db->query('SELECT *, 
+                            roles.rolesname
+                            FROM users 
+                            INNER JOIN roles 
+                            ON users.userrole = roles.rolesid 
+                            WHERE users.email = :email');
             $this->db->bind(':email', $email);
 
             $row = $this->db->single();
