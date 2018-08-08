@@ -158,6 +158,7 @@ class Users extends Controller{
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->username;
         $_SESSION['user_role'] = $user->rolesname;
+        $_SESSION['user_role_no'] = $user->userrole;
         redirect('pages/index');
     }
 
@@ -166,6 +167,7 @@ class Users extends Controller{
         unset($_SESSION['user_email']);
         unset($_SESSION['user_name']);
         unset($_SESSION['user_role']);
+        unset($_SESSION['user_role_no']);
         session_destroy();
         redirect('users/login');
     }
