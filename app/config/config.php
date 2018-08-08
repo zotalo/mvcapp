@@ -1,6 +1,6 @@
 <?php
 //DB_PARAMS
-define('DB_HOST', 'localhost');
+define('DB_HOST', '192.168.0.131');
 define('DB_USER', 'teadmin');
 define('DB_PASS', '~te@DBadm1n!');
 define('DB_NAME', 'tea_soeldb');

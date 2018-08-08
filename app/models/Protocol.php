@@ -1,9 +1,8 @@
-<?
+<?php
+    Class Protocol {
+        private $db;
 
-Class Protocol {
-    private $db;
-
-    public function __construct(){
-        $this->db = new Database;
+        public function __construct(){
+            $this->db = new Database;
+        }
     }
-}
