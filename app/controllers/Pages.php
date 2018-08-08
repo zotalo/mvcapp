@@ -23,7 +23,7 @@ class Pages extends Controller{
        
        $data = [
            'title' => 'Πρωτόκολλο ΤΕΑ-ΣΟΕΛ',
-           'description' => 'Εφαρμογή δημιουργίας πρωτοκόλλου'
+           'description' => 'Εφαρμογή διαχείρισης πρωτοκόλλου'
        ];
        
        
