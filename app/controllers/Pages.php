@@ -22,8 +22,8 @@ class Pages extends Controller{
     
        
        $data = [
-           'title' => 'Πρωτόκολλο ΤΕΑ-ΣΟΕΛ',
-           'description' => 'Εφαρμογή διαχείρισης πρωτοκόλλου'
+           'title' => 'ΤΕΑ-ΣΟΕΛ',
+           'description' => 'Εφαρμογή διαχείρισης'
        ];
        
        
@@ -32,7 +32,7 @@ class Pages extends Controller{
    public function about(){
        $data = [
            'title' => 'About',
-           'description' => 'Application For TEA-SOEL Protocol'
+           'description' => 'Application For TEA-SOEL'
        ];
        $this->view('pages/about', $data);
        
