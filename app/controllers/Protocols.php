@@ -14,6 +14,6 @@ Class Protocols extends Controller {
             'title' => 'Protocol',
             'description' => 'Protocol for TEA'
         ];
-        $this->view('protocol/index', $data);
+        $this->view('protocols/index', $data);
     }
 }
