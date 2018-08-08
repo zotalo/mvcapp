@@ -13,7 +13,7 @@
  */
 class Pages extends Controller{
    public function __construct() {
-    if(!isLoggedIn() || $_SESSION['user_role_no'] > 2){
+    if(!isLoggedIn()){
         redirect('users/login');
     }
    }

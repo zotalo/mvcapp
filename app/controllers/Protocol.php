@@ -3,8 +3,8 @@
 class Protocol extends Controller {
     public function __construct(){
         
-        if(!isLoggedIn()){
-            redirect('users/login');
+        if(!isLoggedIn() || $_SESSION['user_role_no'] > 2){
+            redirect('pages/index');
         }
        // $this->userModel = $this->model('Protocol');
     }
