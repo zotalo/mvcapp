@@ -6,7 +6,7 @@ class Protocol extends Controller {
         if(!isLoggedIn()){
             redirect('users/login');
         }
-        $this->userModel = $this->model('Protocol');
+       // $this->userModel = $this->model('Protocol');
     }
 
     public function index(){
