@@ -37,11 +37,5 @@ class Pages extends Controller{
        $this->view('pages/about', $data);
        
    }
-   public function protocol(){
-       $data = [
-           'title' => 'Protocol',
-           'description' => 'Protocol for TEA'
-       ];
-       $this->view('pages/protocol', $data);
-   }
+   
 }
