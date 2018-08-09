@@ -21,13 +21,14 @@ class database {
        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
        $options = array(
            PDO::ATTR_PERSISTENT => true,
-           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+           PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
        );
        
        //Create PDO instance
        try{
-           $this->dbh = new PDO($dsn, $this->user, $this->pass, $options)
-                   ;
+           $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+           $this->dbh->exec("SET CHARACTER SET 'utf8'");
        } catch (PDOException $e) {
            $this->error = $e->getMessage();
            echo $this->error;

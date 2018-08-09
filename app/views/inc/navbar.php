@@ -13,9 +13,9 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/protocols/index">Πρωτόκολλο</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo URLROOT; ?>/posts/index">Posts</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo URLROOT; ?>/posts/index">Posts</a>
+            </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">Σχετικά</a>
           </li>
