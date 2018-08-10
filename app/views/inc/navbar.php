@@ -28,6 +28,11 @@
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo URLROOT ?>/users/logout">Αποσύνδεση</a>
           </li>
+          <?php if($_SESSION['user_role_no']==1) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Διαχειριστής</a>
+            </li>
+          <?php endif; ?>
         <?php else : ?>
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo URLROOT ?>/users/register">Εγγραφή</a>
@@ -35,6 +40,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Σύνδεση</a>
           </li>
+          
         <?php endif; ?>
         </ul>
       </div>
