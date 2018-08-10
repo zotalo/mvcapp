@@ -40,7 +40,6 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Σύνδεση</a>
           </li>
-          
         <?php endif; ?>
         </ul>
       </div>
