@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo URLROOT ?>">Αρχική</a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>">Αρχική</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/protocols/index">Πρωτόκολλο</a>
@@ -26,16 +26,16 @@
             <a class="nav-link" href="#">Καλώς ήρθες <?php echo $_SESSION['user_name'] ." με ρόλο: ". $_SESSION['user_role']; ?></a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo URLROOT ?>/users/logout">Αποσύνδεση</a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Αποσύνδεση</a>
           </li>
           <?php if($_SESSION['user_role_no']==1) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="#">Διαχειριστής</a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>/# ">Διαχειριστής</a>
             </li>
           <?php endif; ?>
         <?php else : ?>
           <li class="nav-item ">
-            <a class="nav-link" href="<?php echo URLROOT ?>/users/register">Εγγραφή</a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Εγγραφή</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Σύνδεση</a>
