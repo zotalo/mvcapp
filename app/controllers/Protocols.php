@@ -7,6 +7,7 @@ Class Protocols extends Controller {
             redirect('pages/index');
         }
         $this->userModel = $this->model('Protocol');
+        $this->userModel = $this->model('User');
     }
 
     public function index(){

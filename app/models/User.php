@@ -5,7 +5,18 @@
         public function __construct() {
             $this->db = new Database;
         }
-
+        
+        //Get Users
+        public function getUsers(){
+            $this->db->query('SELECT *, roles.rolesname 
+                                FROM users
+                                INNER JOIN roles
+                                ON users.userrole = roles.rolesid
+                                ORDER BY userid
+                                ');
+            $results = $this->db->resultSet();
+            return $results;
+        }
         //Resgister user
         public function register($data){
             $this->db->query('INSERT INTO users (username, email, userhashpass, userrole) VALUES (:name, :email, :password, :role)');
