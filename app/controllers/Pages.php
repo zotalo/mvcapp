@@ -16,6 +16,9 @@ class Pages extends Controller{
     if(!isLoggedIn()){
         redirect('users/login');
     }
+    else if($_SESSION['user_role_no'] == 0){
+        redirect('users/wait');
+    }
    }
    
    public function index(){

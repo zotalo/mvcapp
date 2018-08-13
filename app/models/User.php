@@ -24,7 +24,7 @@
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':email', $data['email']);
             $this->db->bind(':password', $data['password']);
-            $this->db->bind(':role', 1);
+            $this->db->bind(':role', 0);
 
             //Execute
             if($this->db->execute()){

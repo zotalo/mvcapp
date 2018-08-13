@@ -4,6 +4,9 @@
             if(!isLoggedIn()){
                 redirect('users/login');
             }
+            if($_SESSION['user_role_no'] == 0){
+                redirect('users/wait');
+            }
             $this->postModel = $this->model('Post');
             $this->userModel = $this->model('User');
         }

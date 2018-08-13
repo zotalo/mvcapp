@@ -172,5 +172,11 @@ class Users extends Controller{
         redirect('users/login');
     }
 
-    
+    public function wait(){
+        $data = [
+            'title' => 'Αναμονή',
+            'description' => 'Αναμονή'
+        ];
+        $this->view('users/wait', $data);
+    }
 }
