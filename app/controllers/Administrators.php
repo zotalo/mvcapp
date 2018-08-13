@@ -6,7 +6,8 @@ Class Administrators extends Controller {
         if(!isLoggedIn() || $_SESSION['user_role_no'] != 1){
             redirect('pages/index');
         }
-        $this->userModel = $this->model('Administrator');
+        $this->administratorModel = $this->model('Administrator');
+        $this->userModel = $this->model('User');
     }
 
     public function index(){
@@ -15,5 +16,15 @@ Class Administrators extends Controller {
             'description' => 'Administrator for TEA'
         ];
         $this->view('administrators/index', $data);
+    }
+
+    public function users(){
+        $users = $this->userModel->getUsers();
+
+        $data = [
+            'users'=>$users,
+
+        ];
+        $this->view('administrators/users', $data);
     }
 }

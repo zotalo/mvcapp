@@ -17,4 +17,14 @@ Class Protocols extends Controller {
         ];
         $this->view('protocols/index', $data);
     }
+
+    public function users(){
+        $users = $this->administratorModel->getUsers();
+
+        $data = [
+            'users'=>$users,
+
+        ];
+        $this->view('administrators/users', $data);
+    }
 }
