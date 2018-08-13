@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/inc/header.php';?>
 <div class="container">
-    <div class="card">
+    <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="<?php echo URLROOT; ?>/public/img/user.png" alt="users" width="128" height="128">
         <div class="card-body">
          <h5 class="card-title">
