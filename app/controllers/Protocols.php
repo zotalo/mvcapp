@@ -6,7 +6,7 @@ Class Protocols extends Controller {
         if(!isLoggedIn() || $_SESSION['user_role_no'] > 2){
             redirect('pages/index');
         }
-        $this->userModel = $this->model('Protocol');
+        $this->protocolModel = $this->model('Protocol');
         $this->userModel = $this->model('User');
     }
 
