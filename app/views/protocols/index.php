@@ -19,7 +19,7 @@
             από <?php echo $protocols->username ." στις " . $protocols->protocolRecordDate; ?>
             </h6>
             <div class="bg-light p2 mb-3">
-                Ημ. Πρωτοκόλλου: <?php echo $protocols->protocolDate; ?>
+                Ημ. Πρωτοκόλλου: <?php echo $protocols->protocoldate; ?>
             </div>
             <div class="bg-light p2 mb-3">
                 Από/Προς: <?php echo $protocols->protocolFromTo; ?>
