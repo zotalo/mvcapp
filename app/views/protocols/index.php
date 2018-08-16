@@ -16,7 +16,7 @@
                 <?php echo $protocols->protocolYear. "." . $protocols->protocolNo . " - " . $protocols->inOutDescription;?>
             </h4>
             <h6 class="card-title">
-            από χρήστη: <?php echo $protocols->username; ?>
+            από <?php echo $protocols->username . " στις " . protocols->protocolRecordDate; ?>
             </h6>
             <div class="bg-light p2 mb-3">
                 Ημ. Πρωτοκόλλου: <?php echo $protocols->protocolDate; ?>
@@ -27,7 +27,7 @@
             <p class="card-text">
                 <?php echo $protocols->protocolDescription; ?>
             </p>
-            <a href="<?php echo URLROOT; ?>/protocol/show/<?php echo $protocol->protocolId; ?>" class="btn btn-dark">Περισσότερα</a>
+            <a href="<?php echo URLROOT; ?>/protocol/show/<?php echo $protocols->protocolId; ?>" class="btn btn-dark">Περισσότερα</a>
         </div>
     <?php endforeach; ?>
 <?php require APPROOT . '/views/inc/footer.php';?>
