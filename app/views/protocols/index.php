@@ -6,7 +6,7 @@
         </div>
         <div class="col-md-6">
             <a href="<?php echo URLROOT; ?>/protocol/add" class="btn btn-primary pull-right">
-                <i class="fa fa-pencil"></i> Add Post
+                <i class="fa fa-pencil"></i> Νέο Πρωτόκολλο
             </a>
         </div>
     </div>
