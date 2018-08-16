@@ -13,7 +13,7 @@
     <?php foreach($data['protocols'] as $protocols) : ?>
         <div class="card card-body mb-3">
             <h4 class="card-title">
-                <?php echo $protocols->protocolYear. "." . $protocols->protocolNo . " - " . $protocols->inOutDescription;?>
+                <?php echo $protocols->protocolYear. "." . $filled_int = sprintf("%04d", $protocols->protocolNo) . " - " . $protocols->inOutDescription;?>
             </h4>
             <h6 class="card-title">
             από <?php echo $protocols->username ." στις " . $protocols->protocolRecordate; ?>
