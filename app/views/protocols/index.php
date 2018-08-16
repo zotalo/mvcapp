@@ -10,6 +10,16 @@
             </a>
         </div>
     </div>
+    <table class="table">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Αρ.Πρωτ.</th>
+            <th scope="col">Εισ/Εξεχ</th>
+            <th scope="col">Ημ.Πρωτ.#</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <?php foreach($data['protocols'] as $protocols) : ?>
         <div class="card card-body mb-3">
             <h4 class="card-title">
