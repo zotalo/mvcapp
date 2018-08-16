@@ -16,10 +16,10 @@
                 <?php echo $protocols->protocolYear. "." . $protocols->protocolNo . " - " . $protocols->inOutDescription;?>
             </h4>
             <h6 class="card-title">
-            από <?php echo $protocols->username ." στις " . $protocols->protocolRecordDate; ?>
+            από <?php echo $protocols->username ." στις " . $protocols->protocolRecordate; ?>
             </h6>
             <div class="bg-light p2 mb-3">
-                Ημ. Πρωτοκόλλου: <?php echo $protocols->protocoldate; ?>
+                Ημ. Πρωτοκόλλου: <?php echo $protocols->protocolDate; ?>
             </div>
             <div class="bg-light p2 mb-3">
                 Από/Προς: <?php echo $protocols->protocolFromTo; ?>
