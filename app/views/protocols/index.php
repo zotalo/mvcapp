@@ -16,7 +16,7 @@
                 <?php echo $protocols->protocolYear. "." . $protocols->protocolNo . " - " . $protocols->inOutDescription;?>
             </h4>
             <h6 class="card-title">
-            από <?php echo $protocols->username . " στις " . protocols->protocolRecordDate; ?>
+            από <?php echo $protocols->username ." στις " . $protocols->protocolRecordDate; ?>
             </h6>
             <div class="bg-light p2 mb-3">
                 Ημ. Πρωτοκόλλου: <?php echo $protocols->protocolDate; ?>
