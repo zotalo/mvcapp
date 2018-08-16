@@ -14,9 +14,10 @@ Class Protocols extends Controller {
     }
 
     public function index(){
+        //Get Protocols
+        $protocols = $this->protocolModel->getProtocols();
         $data = [
-            'title' => 'Protocol',
-            'description' => 'Protocol for TEA'
+            'protocols' => $protocols,
         ];
         $this->view('protocols/index', $data);
     }
