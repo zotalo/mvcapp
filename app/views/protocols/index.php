@@ -10,27 +10,25 @@
             </a>
         </div>
     </div>
-    <?php $i=1; ?>
-    <table class="table table-hover">
+    <table class="table table-hover table-sm">
         <thead>
-            <th scope="col">#</th>
             <th scope="col">Αρ.Πρωτ.</th>
+            <th scope="col">Ημ.Πρωτ.</th>
+            <th scope="col">Θέμα</th>
             <th scope="col">Εισ/Εξερ</th>
             <th scope="col">Από/Προς</th>
             <th scope="col">Σχετικός Αρ.</th>
-            <th scope="col">Ημ.Πρωτ.</th>
         </thead>
         <tbody class="table-hover">
             <?php foreach($data['protocols'] as $protocols) : ?>
             <tr>
-                <th scope="row"><?php echo $i; ?></th>
                 <th scope="row"><a href="<?php echo $protocols->protocolId;?>"><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></a></td>
+                <td><?php echo $protocols->protocolDate; ?></td>
+                <td><?php echo $protocols->protocolSubject;?></td>
                 <td><?php echo $protocols->inOutDescription;?></td>
                 <td><?php echo $protocols->protocolFromTo; ?></td>
                 <td><?php echo $protocols->protocolDocumentNo; ?></td>
-                <td><?php echo $protocols->protocolDate; ?></td>
             </tr>
-            <?php $i++; ?>
             <?php endforeach; ?>
         </tbody>
     </table>
