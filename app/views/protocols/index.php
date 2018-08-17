@@ -22,14 +22,14 @@
         </thead>
         <tbody class="table-hover">
             <?php foreach($data['protocols'] as $protocols) : ?>
-            <a href="#"><tr>
+            <tr>
                 <th scope="row"><?php echo $i; ?></th>
-                <td ><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></td>
+                <th scope="row"><a href="<?php echo $protocols->protocolId;?>"><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></a></td>
                 <td ><?php echo $protocols->inOutDescription;?></td>
                 <td ><?php echo $protocols->protocolFromTo; ?></td>
                 <td ><?php echo $protocols->protocolDocumentNo; ?></td>
                 <td ><?php echo $protocols->protocolDate; ?></td>
-            </tr></a>
+            </tr>
             <?php $i++; ?>
             <?php endforeach; ?>
         </tbody>
