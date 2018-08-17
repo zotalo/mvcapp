@@ -15,11 +15,24 @@
             <th scope="col">#</th>
             <th scope="col">Αρ.Πρωτ.</th>
             <th scope="col">Εισ/Εξεχ</th>
-            <th scope="col">Ημ.Πρωτ.#</th>
+            <th scope="col">Από/Προς</th>
+            <th scope="col">Ημ.Πρωτ.</th>
         </thead>
         <tbody>
+        <?php $i=1; ?>
+            <?php foreach($data['protocols'] as $protocols) : ?>
+            <tr>
+                <th><?php echo $i; ?></th>
+                <th><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></th>
+                <th><?php echo $protocols->inOutDescription;?></th>
+                <th><?php echo $protocols->protocolFromTo; ?></th>
+                <th><?php echo $protocols->protocolDate; ?></th>
+            </tr>
+            <?php $i++; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
+    
     <?php foreach($data['protocols'] as $protocols) : ?>
         <div class="card card-body mb-3">
             <h4 class="card-title">
