@@ -10,24 +10,26 @@
             </a>
         </div>
     </div>
+    <?php $i=1; ?>
     <table class="table">
         <thead>
             <th scope="col">#</th>
             <th scope="col">Αρ.Πρωτ.</th>
-            <th scope="col">Εισ/Εξεχ</th>
+            <th scope="col">Εισ/Εξερ</th>
             <th scope="col">Από/Προς</th>
+            <th scope="col">Σχετικός Αρ.</th>
             <th scope="col">Ημ.Πρωτ.</th>
         </thead>
-        <tbody>
-        <?php $i=1; ?>
+        <tbody class="table-hover">
             <?php foreach($data['protocols'] as $protocols) : ?>
-            <tr>
-                <th><?php echo $i; ?></th>
-                <th><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></th>
-                <th><?php echo $protocols->inOutDescription;?></th>
-                <th><?php echo $protocols->protocolFromTo; ?></th>
-                <th><?php echo $protocols->protocolDate; ?></th>
-            </tr>
+            <a href="#"><tr>
+                <th scope="row"><?php echo $i; ?></th>
+                <td ><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></td>
+                <td ><?php echo $protocols->inOutDescription;?></td>
+                <td ><?php echo $protocols->protocolFromTo; ?></td>
+                <td ><?php echo $protocols->protocolDocumentNo; ?></td>
+                <td ><?php echo $protocols->protocolDate; ?></td>
+            </tr></a>
             <?php $i++; ?>
             <?php endforeach; ?>
         </tbody>
