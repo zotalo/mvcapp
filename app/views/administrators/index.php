@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
-    <div class="container text-center">
+    <div class="text-center">
         <div class="row mb-3">
             <div class="col-md-6">
                     <h1>Διαχειριστής</h1>

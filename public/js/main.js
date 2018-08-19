@@ -5,13 +5,15 @@
  */
 jQuery("document").ready(function($){
 
-	var navigate = $('nav');
+	$(document).ready( function () {
+		$('#tprot').DataTable();
+	} );
 
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 30) {
-		navigate.addClass("f-nav");
+		if ($(this).scrollTop()) {
+			$('nav').addClass("f-nav");
 	} else {
-		navigate.removeClass("f-nav");
+		$('nav').removeClass("f-nav");
 		}
 	});
 });

@@ -10,7 +10,7 @@
             </a>
         </div>
     </div>
-    <table class="table table-hover table-sm">
+    <table id="tprot" class="table table-hover table-sm">
         <thead>
             <th scope="col">Αρ.Πρωτ.</th>
             <th scope="col">Ημ.Πρωτ.</th>
@@ -32,6 +32,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    
-    
 <?php require APPROOT . '/views/inc/footer.php';?>
