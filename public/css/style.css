@@ -23,4 +23,6 @@ body{
 
 footer {
     margin-top: 8px;
+    text-align: center;
+    position: relative;
 }

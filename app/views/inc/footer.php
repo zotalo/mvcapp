@@ -1,6 +1,6 @@
 </div>
 <footer class="bg-dark">
-  <div class="container text-light">
+  <div class="container text-light" id="footer">
   &copy; 2018 - Σώμα Ορκωτών Ελεγκτών Λογιστών
   </div>
 </footer>
