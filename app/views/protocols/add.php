@@ -10,14 +10,16 @@
                 <span class="invalid-feedback"><?php echo $data['subject_err']; ?></span>
             </div>
             <div class="form-group">
+                <label for="inout">Εισ/Εξ:</label>
+                <select name="inout" class="custom-select">
+                    <option value=0>Εισερχόμενο</option>
+                    <option value=1>Εξερχόμενο</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="pdate">Ημερομηνία: <sup>*</sup></label>
                 <input type="date" name="pdate" data-date-format="dd/mm/yyyy" class="form-control form-control-lg <?php echo (!empty($data['pdate_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['pdate'];?>">
                 <span class="invalid-feedback"><?php echo $data['pdate_err']; ?></span>
-            </div>
-            <div class="form-group">
-                <label for="description">Περιγραφή: <sup>*</sup></label>
-                <textarea name="description" class="form-control form-control-lg <?php echo (!empty($data['description_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['description'];?></textarea>
-                <span class="invalid-feedback"><?php echo $data['description_err']; ?></span>
             </div>
             <div class="form-group">
                 <label for="fromto">Από/Προς: <sup>*</sup></label>
@@ -25,20 +27,25 @@
                 <span class="invalid-feedback"><?php echo $data['fromto_err']; ?></span>
             </div>
             <div class="form-group">
-                <label for="nodoc">Αρ. Εγγράφου: <sup>*</sup></label>
+                <label for="description">Περιγραφή: </label>
+                <textarea name="description" class="form-control form-control-lg <?php echo (!empty($data['description_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['description'];?></textarea>
+                <span class="invalid-feedback"><?php echo $data['description_err']; ?></span>
+            </div>
+            <div class="form-group">
+                <label for="nodoc">Αρ. Εγγράφου: </label>
                 <input type="text" name="nodoc" class="form-control form-control-lg <?php echo (!empty($data['nodoc_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['nodoc'];?>">
                 <span class="invalid-feedback"><?php echo $data['nodoc_err']; ?></span>
             </div>
             <div class="form-group">
-                <label for="idate">Ημ. Έκδοσης: <sup>*</sup></label>
+                <label for="idate">Ημ. Έκδοσης: </label>
                 <input type="date" name="idate" data-date-format="dd/mm/yyyy" class="form-control form-control-lg <?php echo (!empty($data['idate_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['idate'];?>">
                 <span class="invalid-feedback"><?php echo $data['idate_err']; ?></span>
             </div>
             <div class="form-group">
-                <label for="file">Ημ. Έκδοσης: <sup>*</sup></label>
-                <input type="file" name="file" class="form-control form-control-lg <?php echo (!empty($data['file_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['file'];?>">
-                <span class="invalid-feedback"><?php echo $data['file_err']; ?></span>
-            </div>
+                <label class="custom-file" for="file">Αρχείο: </label>
+                <input type="file" id="file" name="file" class="<?php echo (!empty($data['file_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['file'];?>">
+                <span class=" invalid-feedback"><?php echo $data['file_err']; ?></span>
+                </div>
             <input type="submit" class="btn btn-success" value="Submit">
             </form>
         </div>
