@@ -16,4 +16,4 @@ define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
 define('APPVERSION', '1.4-1808');
 //Author
-define('APPDEVELOPER', 'George Siorokos');
+define('APPDEVELOPER', 'Σιορόκος Γεώργιος');

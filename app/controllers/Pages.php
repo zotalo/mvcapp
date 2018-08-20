@@ -34,8 +34,8 @@ class Pages extends Controller{
    }
    public function about(){
        $data = [
-           'title' => 'About',
-           'description' => 'Application For TEA-SOEL'
+           'title' => 'Σχετικά',
+           'description' => 'Εφαρμογή για το πρωτόκολλο ΤΕΑ-ΣΟΕΛ'
        ];
        $this->view('pages/about', $data);
        
