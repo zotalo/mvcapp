@@ -5,7 +5,7 @@
             <h1>Πρωτόκολλο</h1>
         </div>
         <div class="col-md-6">
-            <a href="<?php echo URLROOT; ?>/protocol/add" class="btn btn-primary pull-right">
+            <a href="<?php echo URLROOT; ?>/protocols/add" class="btn btn-primary pull-right">
                 <i class="fa fa-pencil"></i> Νέο Πρωτόκολλο
             </a>
         </div>

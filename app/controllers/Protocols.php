@@ -22,4 +22,11 @@ Class Protocols extends Controller {
         $this->view('protocols/index', $data);
     }
 
+    public function add(){
+        //Get Protocols
+        $data = [
+
+        ];
+        $this->view('protocols/add', $data);
+    }
 }
