@@ -9,10 +9,11 @@ jQuery("document").ready(function($){
 		$('#tprot').DataTable({
 			"language": {
 				"url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
-				
+
 			},
 			"order": [[0, "desc"]],
-			"processing": true
+			"processing": true,
+			
 		});
 	} );
 
