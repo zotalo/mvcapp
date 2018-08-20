@@ -10,7 +10,7 @@
             </a>
         </div>
     </div>
-    <table id="tprot" class="table table-hover table-sm">
+    <table id="tprot" class="table table-hover table-sm loader">
         <thead>
             <th scope="col">Αρ.Πρωτ.</th>
             <th scope="col">Ημ.Πρωτ.</th>
