@@ -23,7 +23,7 @@
             <?php foreach($data['protocols'] as $protocols) : ?>
             <tr>
                 <th scope="row"><a href="<?php echo URLROOT; ?>/protocols/show/<?php echo $protocols->protocolId;?>"><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></a></td>
-                <td><?php echo $protocols->protocolDate; ?></td>
+                <td><?php echo dateFormat($protocols->protocolDate); ?></td>
                 <td><?php echo $protocols->protocolSubject;?></td>
                 <td><?php echo $protocols->inOutDescription;?></td>
                 <td><?php echo $protocols->protocolFromTo; ?></td>
