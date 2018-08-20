@@ -1,15 +1,17 @@
 <?php require APPROOT . '/views/inc/header.php';?>
 <a href="<?php echo URLROOT; ?>/protocols" class="btn btn-light"><i class="fa fa-backward"></i>Επιστροφή</a>
 <br>
-<h1><?php echo $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. "-" . dateFormat($data['protocol']->protocolDate);?></h1>
+<h1><?php echo "# " . $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. " [" . dateFormat($data['protocol']->protocolDate)."]";?></h1>
 <div class="bg-secondary text-white p-2 mb-3">
     Δημιουργήθηκε από <?php echo $data['user']->username; ?> στις <?php echo dateFormatH($data['protocol']->protocolRecordate); ?>
 </div>
 <div class="">
-<p><strong>Θέμα: </strong><?php echo $data['protocol']->protocolSubject; ?></p>
-<p><strong>Περιγραφή: </strong><?php echo $data['protocol']->protocolDescription; ?></p>
-<p><strong>Εισ/Εξ: </strong><?php echo $data['protocol']->inOutDescription; ?></p>
-<p><strong>Από/Προς: </strong><?php echo $data['protocol']->protocolFromTo; ?></p>
+    <p><strong>Θέμα: </strong><?php echo $data['protocol']->protocolSubject; ?></p>
+    <p><strong>Εισ/Εξ: </strong><?php echo $data['protocol']->inOutDescription; ?></p>
+    <p><strong>Από/Προς: </strong><?php echo $data['protocol']->protocolFromTo; ?></p>
+    <p><strong>Ημ. Έκδοσης: </strong><?php echo dateFormat($data['protocol']->protocolDateIssued); ?></p>
+    <p><strong>Περιγραφή: </strong><?php echo $data['protocol']->protocolDescription; ?></p>
+    <p><strong>Επισυναπτόμενο: </strong><a href="#"><?php echo "ΑΡΧΕΙΟ"; ?></a></p>
 </div>
 <hr>
     <a href="<?php echo URLROOT;?>/protocols/edit/<?php echo $data['protocol']->protocolId; ?>" class="btn btn-dark">Edit</a>
