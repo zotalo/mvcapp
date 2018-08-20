@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label for="inout">Εισ/Εξ:</label>
                 <select name="inout" class="custom-select">
-                    <option value=0>Εισερχόμενο</option>
+                    <option value=0 selected>Εισερχόμενο</option>
                     <option value=1>Εξερχόμενο</option>
                 </select>
             </div>
@@ -46,7 +46,7 @@
                 <input type="file" id="file" name="file" class="<?php echo (!empty($data['file_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['file'];?>">
                 <span class=" invalid-feedback"><?php echo $data['file_err']; ?></span>
                 </div>
-            <input type="submit" class="btn btn-success" value="Submit">
+            <input type="submit" class="btn btn-success" value="Καταχώριση">
             </form>
         </div>
     </div>
