@@ -12,7 +12,7 @@ jQuery("document").ready(function($){
 				
 			},
 			"order": [[0, "desc"]],
-			"processing": true,
+			"processing": true
 		});
 	} );
 
