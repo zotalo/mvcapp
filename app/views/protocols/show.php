@@ -1,9 +1,9 @@
 <?php require APPROOT . '/views/inc/header.php';?>
 <a href="<?php echo URLROOT; ?>/protocols" class="btn btn-light"><i class="fa fa-backward"></i>Back</a>
 <br>
-<h1><?php echo $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. "-" . $data['protocol']->protocolDate;?></h1>
+<h1><?php echo $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. "-" . dateFormat($data['protocol']->protocolDate);?></h1>
 <div class="bg-secondary text-white p-2 mb-3">
-    Δημιουργήθηκε από <?php echo $data['user']->username; ?> στις <?php echo $data['protocol']->protocolRecordate; ?>
+    Δημιουργήθηκε από <?php echo $data['user']->username; ?> στις <?php echo dateFormatH($data['protocol']->protocolRecordate); ?>
 </div>
 <div class="">
 <p><strong>Θέμα: </strong><?php echo $data['protocol']->protocolSubject; ?></p>
