@@ -29,4 +29,16 @@ Class Protocols extends Controller {
         ];
         $this->view('protocols/add', $data);
     }
+
+    public function show($id){
+        //Show Protocol
+        $protocol = $this->protocolModel->getProtocolById($id);
+        $user = $this->userModel->getUserById($protocol->protocolUser);
+
+        $data = [
+            'protocol' => $protocol,
+            'user' => $user
+        ];
+        $this->view('protocols/show', $data);
+    }
 }

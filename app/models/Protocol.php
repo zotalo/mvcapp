@@ -22,4 +22,15 @@
             $results = $this->db->resultSet();
             return $results;
         }
+
+        public function getProtocolById($id){
+            $this->db->query('SELECT protocol.*, pinout.inOutDescription FROM protocol 
+            INNER JOIN pinout
+            ON pinout.inOutId = protocolInOut
+            WHERE protocol.protocolId = :id');
+            $this->db->bind(':id', $id);
+
+            $row = $this->db->single();
+            return $row;
+        }
     }
