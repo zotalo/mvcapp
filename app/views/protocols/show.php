@@ -1,5 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
-<a href="<?php echo URLROOT; ?>/protocols" class="btn btn-light"><i class="fa fa-backward"></i>Back</a>
+<a href="<?php echo URLROOT; ?>/protocols" class="btn btn-light"><i class="fa fa-backward"></i>Επιστροφή</a>
 <br>
 <h1><?php echo $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. "-" . dateFormat($data['protocol']->protocolDate);?></h1>
 <div class="bg-secondary text-white p-2 mb-3">
