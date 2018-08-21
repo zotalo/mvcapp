@@ -23,6 +23,7 @@ Class Protocols extends Controller {
     }
 
     public function add(){
+        $currentprotocol = $this->protocolModel->getCurrentProtocol();
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Sanitize POST array
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -43,7 +44,31 @@ Class Protocols extends Controller {
                 'idate_err' => '',
                 'file_err' => ''
             ];
+
+        //Validate data
+        if(empty($data['subject'])){
+            $data['subject_err'] = 'Συμπληρώστε το Θέμα';
+        }
+        if(empty($data['pdate'])){
+            $data['pdate_err'] = 'Συμπληρώστε Ημερομηνία';
+        }
+        if(empty($data['fromto'])){
+            $data['fromto_err'] = 'Συμπληρώστε Αποστολέα / Παραλήπτη';
+        }
         
+        //Make sure no errors
+        if(empty($data['subject_err']) && empty($data['pdate_err']) && empty($data['fromto_err'])){
+            //Validated
+            if($this->protocolModel->addProtocol($data)){
+                flash('protocol_message', 'Protocol Added');
+                redirect('protocols');
+            } else {
+                die('Something went wrong');
+            }
+        } else {
+            //Load view with errors
+            $this->view('protocols/add', $data);
+        }
         
     } else {
         $data = [
@@ -70,4 +95,5 @@ Class Protocols extends Controller {
         ];
         $this->view('protocols/show', $data);
     }
+    
 }

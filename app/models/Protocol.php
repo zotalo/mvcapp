@@ -33,4 +33,41 @@
             $row = $this->db->single();
             return $row;
         }
+
+        public function addProtocol($data){
+            $this->db->query('INSERT INTO protocol (protocolYear, protocolNo, protocolDate, protocolSubject, protocolDescription, protocolInOut, protocolFromTo, protocolDocumentNo, protocolDateIssued, protocolUser VALUES (:protyear, :protno, :protdate, :protsubject, :protdescription, :protinout, :protfromto, :protdocumentno, :protdateissued, :protuser)');
+            //Bind Values
+            $this->db->bind(':protyear', getCurrentYear());
+            $this->db->bind(':protno', newProtocol());
+            $this->db->bind(':protdate', $data['pdate']);
+            $this->db->bind(':protsubject', $data['subject']);
+            $this->db->bind(':protdescription', $data['description']);
+            $this->db->bind(':protinout', $data['inout']);
+            $this->db->bind(':protfromto', $data['fromto']);
+            $this->db->bind(':protdocumentno', $data['nodoc']);
+            $this->db->bind(':protdateissued', $data['idate']);
+            $this->db->bind(':protuser', $_SESSION['userid']);
+            //Execute
+            if($this->db->execute()){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+
+        public function getCurrentProtocol(){
+            $currentyear = getCurrentYear();
+            $this->db->query('SELECT protocolNo
+            FROM protocol
+            WHERE protocolYear = :currentyear
+            ORDER BY protocolNo DESC
+            LIMIT 1');
+            $this->db->bind(':currentyear', $currentyear);
+            $row = $this->db->single();
+            return $row;
+        }
+
+
+        
     }
