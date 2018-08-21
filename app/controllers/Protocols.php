@@ -32,6 +32,7 @@ Class Protocols extends Controller {
                 'subject'=> trim($_POST['subject']),
                 'pdate'=> trim($_POST['pdate']),
                 'description'=> trim($_POST['description']),
+                'inout' => trim($_POST['inout']),
                 'fromto' => trim($_POST['fromto']),
                 'nodoc' => trim($_POST['nodoc']),
                 'idate' => trim($_POST['idate']),

@@ -7,8 +7,7 @@
         return $cy;
     }
     
-    function newProtocol(){
-        $current=getCurrentProtocol();
+    function newProtocol($current){
         if(empty($current)){
             $new = 1;
             return $new;
