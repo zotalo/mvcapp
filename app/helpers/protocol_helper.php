@@ -8,11 +8,11 @@
     }
     
     function newProtocol($current){
-        if(empty($current)){
+        if(($current)== null){
             $new = 1;
             return $new;
         } else {
-            $new = $current++;
+            $new = $current + 1;
             return $new;
         }
     }
