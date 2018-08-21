@@ -36,14 +36,14 @@ Class Protocols extends Controller {
                 'fromto' => trim($_POST['fromto']),
                 'nodoc' => trim($_POST['nodoc']),
                 'idate' => trim($_POST['idate']),
-                'file' => trim($_POST['file']),
+                //'file' => trim($_POST['file']),
                 'userId' => $_SESSION['user_id'],
                 'subject_err' => '',
                 'pdate_err' => '',
                 'fromto_err' => '',
                 'nodoc_err' => '',
                 'idate_err' => '',
-                'file_err' => ''
+                // 'file_err' => ''
             ];
 
         //Validate data
@@ -79,7 +79,7 @@ Class Protocols extends Controller {
             'fromto'=> '',
             'nodoc'=> '',
             'idate'=> '',
-            'file'=> '',
+            // 'file'=> '',
         ];
         $this->view('protocols/add', $data);
         }

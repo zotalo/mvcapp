@@ -35,10 +35,16 @@
         }
 
         public function addProtocol($data){
-            $this->db->query('INSERT INTO protocol (protocolYear, protocolNo, protocolDate, protocolSubject, protocolDescription, protocolInOut, protocolFromTo, protocolDocumentNo, protocolDateIssued, protocolUser VALUES (:protyear, :protno, :protdate, :protsubject, :protdescription, :protinout, :protfromto, :protdocumentno, :protdateissued, :protuser)');
+            $newprotocol = $this->getCurrentProtocol();
+            $this->db->query('INSERT INTO protocol 
+            (protocolYear, protocolNo, protocolDate, protocolSubject, 
+            protocolDescription, protocolInOut, protocolFromTo, protocolDocumentNo, 
+            protocolDateIssued, protocolUser VALUES 
+            (:protyear, :protno, :protdate, :protsubject, :protdescription, 
+            :protinout, :protfromto, :protdocumentno, :protdateissued, :protuser)');
             //Bind Values
             $this->db->bind(':protyear', getCurrentYear());
-            $this->db->bind(':protno', $this->getCurrentProtocol());
+            $this->db->bind(':protno', $newprotocol);
             $this->db->bind(':protdate', $data['pdate']);
             $this->db->bind(':protsubject', $data['subject']);
             $this->db->bind(':protdescription', $data['description']);

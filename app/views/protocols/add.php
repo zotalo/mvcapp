@@ -41,11 +41,7 @@
                 <input type="date" name="idate" data-date-format="dd/mm/yyyy" class="form-control form-control-lg <?php echo (!empty($data['idate_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['idate'];?>">
                 <span class="invalid-feedback"><?php echo $data['idate_err']; ?></span>
             </div>
-            <div class="form-group">
-                <label class="custom-file" for="file">Αρχείο: </label>
-                <input type="file" id="file" name="file" class="<?php echo (!empty($data['file_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['file'];?>">
-                <span class=" invalid-feedback"><?php echo $data['file_err']; ?></span>
-                </div>
+            
             <input type="submit" class="btn btn-success" value="Καταχώριση">
             </form>
         </div>
