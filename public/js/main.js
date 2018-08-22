@@ -24,5 +24,9 @@ jQuery("document").ready(function($){
 		$('nav').removeClass("f-nav");
 		}
 	});
+
+	$(".delete").on("submit", function(){
+        return confirm("Πρόκειται να διαγράψετε μία εγγραφή, ΟΚ;");
+    });
 });
 
