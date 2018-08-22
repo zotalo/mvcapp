@@ -26,7 +26,7 @@
           </li>
           <?php if($_SESSION['user_role_no']==1) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo URLROOT; ?>/administrators/index">Διαχειριστής</a>
+            <a class="nav-link" href="<?php echo URLROOT; ?>/administrators/index">Διαχείριση</a>
             </li>
           <?php endif; ?>
         <?php else : ?>
