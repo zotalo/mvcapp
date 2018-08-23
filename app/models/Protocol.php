@@ -71,5 +71,18 @@
         }
 
 
+        public function deleteProtocol($id){
+            $this->db->query('DELETE FROM protocol WHERE protocolId = :id');
+            //Bind values
+            $this->db->bind(':id', $id);
+            
+
+            //Execute
+            if($this->db->execute()){
+                return true;
+            } else {
+                return false;
+            }
         
+    }
     }

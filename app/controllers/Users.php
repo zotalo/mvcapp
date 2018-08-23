@@ -159,7 +159,7 @@ class Users extends Controller{
         $_SESSION['user_name'] = $user->username;
         $_SESSION['user_role'] = $user->rolesname;
         $_SESSION['user_role_no'] = $user->userrole;
-        redirect('pages/index');
+        redirect('protocols');
     }
 
     public function logout(){

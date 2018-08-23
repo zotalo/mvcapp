@@ -2,11 +2,10 @@
 
 Class Protocols extends Controller {
     public function __construct(){
-        
-        if(!isLoggedIn() || $_SESSION['user_role_no'] > 2){
+        if(!isLoggedIn()){
             redirect('pages/index');
         }
-        if($_SESSION['user_role_no'] == 0){
+        if( $_SESSION['user_role_no'] == 0){
             redirect('users/wait');
         }
         $this->protocolModel = $this->model('Protocol');
@@ -23,6 +22,10 @@ Class Protocols extends Controller {
     }
 
     public function add(){
+        if($_SESSION['user_role_no'] !== (1 || 2)){
+            redirect('protocols');
+        }
+        
         $currentprotocol = $this->protocolModel->getCurrentProtocol();
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Sanitize POST array
@@ -95,6 +98,26 @@ Class Protocols extends Controller {
             'user' => $user
         ];
         $this->view('protocols/show', $data);
+    }
+
+    public function delete($id){
+        
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Get existing post from model
+            $protocol = $this->protocolModel->getProtocolById($id);
+            // Check for owner
+            if($_SESSION['user_role_no'] != 1 || $_SESSION['user_role_no'] !=2){
+                redirect('protocols');
+            }
+            if($this->protocolModel->deleteProtocol($id)){
+                flash('post_message', 'Το Πρωτόκολλο '. $id . ' Διεγράφη');
+                redirect('protocols');
+            } else {
+                die('Something went wrong');
+            }
+        } else {
+            redirect('protocols');
+        }
     }
     
 }
