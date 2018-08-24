@@ -104,17 +104,12 @@ Class Protocols extends Controller {
     }
 
     public function delete($id){
-        if($_SESSION['user_role_no'] < 1 && $_SESSION['user_role_no'] > 2){
-            flasherror('protocol_message', 'Δεν έχετε δικαίωμα γι αυτή την ενέργεια!');
-            redirect('protocols');
-        }
+        
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Get existing post from model
             $protocol = $this->protocolModel->getProtocolById($id);
             // Check for owner
-            if($_SESSION['user_role_no'] < 1 || $_SESSION['user_role_no'] > 2){
-                redirect('protocols');
-            }
+            
             if($this->protocolModel->deleteProtocol($id)){
                 flash('protocol_message', 'Το Πρωτόκολλο '. $id . ' Διεγράφη');
                 redirect('protocols');
