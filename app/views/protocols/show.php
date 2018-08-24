@@ -13,9 +13,12 @@
     <p><strong>Περιγραφή: </strong><?php echo $data['protocol']->protocolDescription; ?></p>
     <p><strong>Επισυναπτόμενο: </strong><a href="#"><?php echo "ΑΡΧΕΙΟ"; ?></a></p>
 </div>
+<?php if($_SESSION['user_role_no'] ==2 || $_SESSION['user_role_no'] ==1) : ?>
 <hr>
     <a href="<?php echo URLROOT;?>/protocols/edit/<?php echo $data['protocol']->protocolId; ?>" class="btn btn-dark">Επεξεργασία</a>
+
     <form class="pull-right delete" action="<?php echo URLROOT; ?>/protocols/delete/<?php echo $data['protocol']->protocolId;?>" method ="post">
         <input type="submit" value="Διαγραφή" class="btn btn-danger">
     </form>
+<?php endif; ?>
 <?php require APPROOT . '/views/inc/footer.php';?>
