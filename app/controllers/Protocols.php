@@ -60,12 +60,14 @@ Class Protocols extends Controller {
         if(empty($data['fromto'])){
             $data['fromto_err'] = 'Συμπληρώστε Αποστολέα / Παραλήπτη';
         }
-        
+        if($data['idate']==""){
+            $data['idate']=null;
+        }
         //Make sure no errors
         if(empty($data['subject_err']) && empty($data['pdate_err']) && empty($data['fromto_err'])){
             //Validated
             if($this->protocolModel->addProtocol($data)){
-                flash('protocol_message', 'Protocol Added');
+                flash('protocol_message', 'Ολοκληρώθηκε η καταχώρηση');
                 redirect('protocols');
             } else {
                 die('Something went wrong');
