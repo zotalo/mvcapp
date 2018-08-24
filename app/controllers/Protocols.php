@@ -23,6 +23,7 @@ Class Protocols extends Controller {
 
     public function add(){
         if($_SESSION['user_role_no'] < 1 || $_SESSION['user_role_no'] > 2 ){
+            flasherror('protocol_message', 'Δεν έχετε δικαιώματα');
             redirect('protocols');
         }
         
@@ -102,6 +103,7 @@ Class Protocols extends Controller {
 
     public function delete($id){
         if($_SESSION['user_role_no'] < 1 || $_SESSION['user_role_no'] > 2 ){
+            flasherror('protocol_message', 'Δεν έχετε δικαιώματα');
             redirect('protocols');
         }
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -112,7 +114,7 @@ Class Protocols extends Controller {
                 redirect('protocols');
             }
             if($this->protocolModel->deleteProtocol($id)){
-                flash('post_message', 'Το Πρωτόκολλο '. $id . ' Διεγράφη');
+                flash('protocol_message', 'Το Πρωτόκολλο '. $id . ' Διεγράφη');
                 redirect('protocols');
             } else {
                 die('Something went wrong');
