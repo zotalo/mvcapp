@@ -150,15 +150,15 @@ Class Protocols extends Controller {
         //Make sure no errors
         if(empty($data['subject_err']) && empty($data['pdate_err']) && empty($data['fromto_err'])){
             //Validated
-            if($this->protocolModel->addProtocol($data)){
-                flash('protocol_message', 'Ολοκληρώθηκε η καταχώρηση');
+            if($this->protocolModel->updateProtocol($data)){
+                flash('protocol_message', 'Ενημερώθηκε το πρωτόκολλο');
                 redirect('protocols');
             } else {
                 die('Something went wrong');
             }
         } else {
             //Load view with errors
-            $this->view('protocols/add', $data);
+            $this->view('protocols/edit', $data);
         } 
         } else {
             $user = $this->userModel->getUserById($_SESSION['user_id']);

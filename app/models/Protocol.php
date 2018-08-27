@@ -9,11 +9,14 @@
         public function getProtocols(){
             $this->db->query('
                 SELECT protocol.*,
-                users.username,
+                u1.username,
+                u2.username,
                 pinout.inOutDescription
                 FROM protocol
-                INNER JOIN users
-                ON protocol.protocolUser = users.userid
+                INNER JOIN users as u1
+                ON protocol.protocolUser = u1.userid
+                LEFT JOIN users as u2
+                ON protocol.protocolUpdateUser = u2.userid
                 INNER JOIN pinout
                 ON pinout.inOutId = protocolInOut
                 ORDER BY protocol.protocolYear DESC, protocol.protocolNo DESC
@@ -70,6 +73,26 @@
             return $new;
         }
 
+        public function updateProtocol($data){
+            $this->db->query('UPDATE protocol SET protocolDate = :protdate, protocolSubject = :protsubject, protocolDescription = :protdescription, protocolInOut = :protinout, protocolFromTo = :protfromto, protocolDocumentNo = :protdocumentno, protocolDateIssued = :protdateissued, protocolUpdateUser = :protuser WHERE protocolId = :id');
+            //Bind Values 
+            $this->db->bind(':protid', $data['id']);
+            $this->db->bind(':protdate', $data['pdate']);
+            $this->db->bind(':protsubject', $data['subject']);
+            $this->db->bind(':protdescription', $data['description']);
+            $this->db->bind(':protinout', $data['inout']);
+            $this->db->bind(':protfromto', $data['fromto']);
+            $this->db->bind(':protdocumentno', $data['nodoc'], PDO::PARAM_STR);
+            $this->db->bind(':protdateissued', $data['idate']);
+            $this->db->bind(':protuser', $data['userId']);
+
+            //Execute
+            if($this->db->execute()){
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         public function deleteProtocol($id){
             $this->db->query('DELETE FROM protocol WHERE protocolId = :id');
