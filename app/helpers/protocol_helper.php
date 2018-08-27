@@ -16,3 +16,11 @@
             return $new;
         }
     }
+
+    function inOutValue($inout){
+        if($inout==0){
+            return $io=[1, "Εξερχόμενο"];
+            } else {
+            return $io=[0,"Εισερχόμενο"];
+        }
+    }

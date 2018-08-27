@@ -6,11 +6,12 @@
     Δημιουργήθηκε από <?php echo $data['user']->username; ?> στις <?php echo dateFormatH($data['protocol']->protocolRecordate); ?>
 </div>
 <div class="">
-    <p><strong>Θέμα: </strong><?php echo $data['protocol']->protocolSubject; ?></p>
+    <p><strong>Θέμα: </strong><?php echo $data['subject']; ?></p>
     <p><strong>Εισ/Εξ: </strong><?php echo $data['protocol']->inOutDescription; ?></p>
     <p><strong>Από/Προς: </strong><?php echo $data['protocol']->protocolFromTo; ?></p>
     <p><strong>Ημ. Έκδοσης: </strong><?php echo dateFormat($data['protocol']->protocolDateIssued); ?></p>
     <p><strong>Περιγραφή: </strong><?php echo $data['protocol']->protocolDescription; ?></p>
+    <p><strong>Αρ. Εισ: </strong><?php echo $data['protocol']->protocolDocumentNo; ?></p>
     <p><strong>Επισυναπτόμενο: </strong><a href="#"><?php echo "ΑΡΧΕΙΟ"; ?></a></p>
 </div>
 <?php if($_SESSION['user_role_no'] ==2 || $_SESSION['user_role_no'] ==1) : ?>
