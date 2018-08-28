@@ -74,7 +74,15 @@
         }
 
         public function updateProtocol($data){
-            $this->db->query('UPDATE protocol SET protocolDate = :protdate, protocolSubject = :protsubject, protocolDescription = :protdescription, protocolInOut = :protinout, protocolFromTo = :protfromto, protocolDocumentNo = :protdocumentno, protocolDateIssued = :protdateissued, protocolUpdateUser = :protuser WHERE protocolId = :id');
+            $this->db->query('UPDATE protocol SET protocolDate = :protdate, 
+            protocolSubject = :protsubject, 
+            protocolDescription = :protdescription, 
+            protocolInOut = :protinout, 
+            protocolFromTo = :protfromto, 
+            protocolDocumentNo = :protdocumentno, 
+            protocolDateIssued = :protdateissued, 
+            protocolUpdateUser = :protuser
+             WHERE protocolId = :protid');
             //Bind Values 
             $this->db->bind(':protid', $data['id']);
             $this->db->bind(':protdate', $data['pdate']);

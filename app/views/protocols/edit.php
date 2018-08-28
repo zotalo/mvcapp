@@ -3,7 +3,7 @@
 <div class="card card-body bg-light mt-5">
             <h2>Πρωτόκολλο: <?php echo $data['year'] . "." . $data['number'];?></h2>
             <p>Επεξεργασία</p>
-            <form action="<?php echo URLROOT; ?>/protocols/edit<?php echo $data['id'];?>" method="post">
+            <form action="<?php echo URLROOT; ?>/protocols/edit/<?php echo $data['id'];?>" method="post">
             <div class="form-group">
                 <label for="subject">Θέμα: <sup>*</sup></label>
                 <input type="text" name="subject" class="form-control form-control-lg <?php echo (!empty($data['subject_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['subject']; ?>">

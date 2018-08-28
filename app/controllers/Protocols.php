@@ -95,10 +95,12 @@ Class Protocols extends Controller {
         //Show Protocol
         $protocol = $this->protocolModel->getProtocolById($id);
         $user = $this->userModel->getUserById($protocol->protocolUser);
+        $upduser = $this->userModel->getUserById($protocol->protocolUpdateUser);
 
         $data = [
             'protocol' => $protocol,
             'user' => $user,
+            'upduser' => $upduser,
             'year' => $protocol->protocolYear,
             'number' => $protocol->protocolNo,
             'subject' => $protocol->protocolSubject,
@@ -112,11 +114,16 @@ Class Protocols extends Controller {
         $this->view('protocols/show', $data);
     }
     public function edit($id){
+        $protocol = $this->protocolModel->getProtocolById($id);
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Sanitize POST array
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             
             $data = [
                 'id'=> $id,
+                'year' => $protocol->protocolYear,
+                'number' => $protocol->protocolNo,
+                'protocol' => $protocol,
                 'subject'=> trim($_POST['subject']),
                 'pdate'=> trim($_POST['pdate']),
                 'description'=> trim($_POST['description']),
@@ -151,15 +158,16 @@ Class Protocols extends Controller {
         if(empty($data['subject_err']) && empty($data['pdate_err']) && empty($data['fromto_err'])){
             //Validated
             if($this->protocolModel->updateProtocol($data)){
-                flash('protocol_message', 'Ενημερώθηκε το πρωτόκολλο');
+                flash('protocol_message', 'Ενημερώθηκε το πρωτόκολλο ' . $data['year'].'.'.$data['number']);
                 redirect('protocols');
             } else {
                 die('Something went wrong');
             }
         } else {
             //Load view with errors
+            echo $data['subject_err'] . $data['pdate_err'] . $data['fromto_err'];
             $this->view('protocols/edit', $data);
-        } 
+            }
         } else {
             $user = $this->userModel->getUserById($_SESSION['user_id']);
             $protocol = $this->protocolModel->getProtocolById($id);
@@ -192,7 +200,7 @@ Class Protocols extends Controller {
             // Check for owner
             
             if($this->protocolModel->deleteProtocol($id)){
-                flash('protocol_message', 'Το Πρωτόκολλο '. $id . ' Διεγράφη');
+                flash('protocol_message', 'Το Πρωτόκολλο '. $protocol->protocolYear .'.'.$protocol->protocolNo . ' Διεγράφη');
                 redirect('protocols');
             } else {
                 die('Something went wrong');
