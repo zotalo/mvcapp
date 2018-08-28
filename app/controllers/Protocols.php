@@ -10,6 +10,7 @@ Class Protocols extends Controller {
         }
         $this->protocolModel = $this->model('Protocol');
         $this->userModel = $this->model('User');
+        $this->fileModel = $this->model('File');
     }
 
     public function index(){
@@ -96,7 +97,18 @@ Class Protocols extends Controller {
         $protocol = $this->protocolModel->getProtocolById($id);
         $user = $this->userModel->getUserById($protocol->protocolUser);
         $upduser = $this->userModel->getUserById($protocol->protocolUpdateUser);
-
+        $file = $this->fileModel->getProtocolFile($protocol->protocolId);
+        if(empty($file)){
+            $filedata = [
+                'file' => null,
+                'url' => null
+            ];
+        } else {
+            $filedata = [
+                'file' => $file->fileProtocolId,
+                'url' => $file->fileUrl
+            ];
+        }
         $data = [
             'protocol' => $protocol,
             'user' => $user,
@@ -109,7 +121,10 @@ Class Protocols extends Controller {
             'fromto' => $protocol->protocolFromTo,
             'description' => $protocol->protocolDescription,
             'nodoc' => $protocol->protocolDocumentNo,
-            'idate' => $protocol->protocolDateIssued
+            'idate' => $protocol->protocolDateIssued,
+            'file' =>$filedata['file'],
+            'url' =>$filedata['url']
+            
         ];
         $this->view('protocols/show', $data);
     }

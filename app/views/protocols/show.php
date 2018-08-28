@@ -17,7 +17,19 @@
     <p><strong>Περιγραφή: </strong><?php echo $data['protocol']->protocolDescription; ?></p>
     <p><strong>Ημ. Έκδοσης: </strong><?php echo dateFormat($data['protocol']->protocolDateIssued); ?></p>
     <p><strong>Αρ. Εισ: </strong><?php echo $data['protocol']->protocolDocumentNo; ?></p>
-    <p><strong>Επισυναπτόμενο: </strong><a href="#"><?php echo "ΑΡΧΕΙΟ"; ?></a></p>
+    <?php if($data['file']==null): ?>
+        <form action="<?php echo URLROOT;?>/files/add"method="post">
+            <div class="form-group">
+                <label for="file">Αρχείο</label>
+                <input type="file" name="file"  >
+                <span class="invalid-feedback"><?php echo $data['file_err'];?></span>
+            </div>
+            <input type="submit" class="btn btn-success" value="Ανέβασμα Αρχείου">
+        </form>
+    <?php else: ?>
+        <p><strong>Επισυναπτόμενο: </strong><a href="#"><?php echo $data['url']; ?></a></p>
+    <?php endif;?>
+
 </div>
 <?php if($_SESSION['user_role_no'] ==2 || $_SESSION['user_role_no'] ==1) : ?>
 <hr>
