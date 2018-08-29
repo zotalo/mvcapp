@@ -11,12 +11,7 @@ Class Files extends Controller {
 
         $files = $this->fileModel->getFiles();
         $data = [
-            'id' => $files->filedId,
-            'protid' => $files->fileProtocolId,
-            'type' => $files->fileType,
-            'typename' => $files->fileTypeName,
-            'name' => $files->fileName,
-            'url' => $files->fileUrl
+            'files' => $files,
         ];
         $this->view('files/index', $data);
     }

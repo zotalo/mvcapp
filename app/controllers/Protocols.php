@@ -198,7 +198,6 @@ Class Protocols extends Controller {
                 'nodoc' => $protocol->protocolDocumentNo,
                 'idate' => $protocol->protocolDateIssued,
                 'protocol' =>$protocol
-            
             ];
             $this->view('protocols/edit', $data);
         }     

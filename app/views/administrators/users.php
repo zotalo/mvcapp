@@ -4,7 +4,7 @@
         <h1>Χρήστες</h1>
     </div>
     <div class="col-md-6">
-        <a href="<?php echo URLROOT; ?>/administrators/add" class="btn btn-primary pull-right">
+        <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-primary pull-right">
             <i class="fa fa-pencil"></i> Add User
         </a>
     </div>
