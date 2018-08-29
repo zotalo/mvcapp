@@ -14,6 +14,9 @@ define('URLROOT', 'http://192.168.0.131/teaprotocol');
 //Site Name
 define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
-define('APPVERSION', '1.4-1808');
+define('APPVERSION', '0.7-1808(beta)');
 //Author
 define('APPDEVELOPER', 'Σιορόκος Γεώργιος');
+//Author Contact
+define('DEVELOPEREMAIL', 'george.siorokos@soel.gr');
+define('DEVELOPERPHONE', '2103891494');

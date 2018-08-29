@@ -18,7 +18,7 @@ jQuery("document").ready(function($){
 	} );
 
 	$(window).scroll(function () {
-		if ($(this).scrollTop()) {
+		if ($(this).scrollTop()>0) {
 			$('nav').addClass("f-nav");
 	} else {
 		$('nav').removeClass("f-nav");

@@ -179,4 +179,18 @@ class Users extends Controller{
         ];
         $this->view('users/wait', $data);
     }
+
+    public function show(){
+        
+        $data = [
+            'title' => 'Πληροφορίες Χρήστη',
+            'id' => $_SESSION['user_id'],
+            'role' => $_SESSION['user_role'],
+            'name' => $_SESSION['user_name'],
+            'email' => $_SESSION['user_email'],
+            
+        ];
+        $this->view('users/show', $data);
+
+    }
 }
