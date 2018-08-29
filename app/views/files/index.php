@@ -5,7 +5,7 @@
         </div>
     </div>
     <table id="tprot" class="table table-hover table-sm loader">
-        <thead>
+        <thead class="thead-dark">
             <th scope="col">Πρωτόκολλο</th>
             <th scope="col">Αρχείο</th>
             <th scope="col">Τύπος</th>

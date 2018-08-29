@@ -27,7 +27,7 @@
             <input type="submit" class="btn btn-success" value="Ανέβασμα Αρχείου">
         </form>
     <?php else: ?>
-        <p><strong>Επισυναπτόμενο: </strong><a href="#"><?php echo $data['url']; ?></a></p>
+        <p><strong>Επισυναπτόμενο: </strong><a href="<?php echo URLROOT;?>/files/show/<?php echo $data['file'];?>"><?php echo $data['url']; ?></a></p>
     <?php endif;?>
 
 </div>
