@@ -8,7 +8,7 @@ Class Files extends Controller {
     }
 
     public function index(){
-
+        
         $files = $this->fileModel->getFiles();
         $data = [
             'files' => $files,
