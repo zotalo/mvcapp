@@ -29,6 +29,26 @@
             return $results;
         }
 
+        public function getAllProtocols(){
+            $this->db->query('
+                SELECT protocol.*,
+                u1.username,
+                u2.username,
+                pinout.inOutDescription
+                FROM protocol
+                INNER JOIN users as u1
+                ON protocol.protocolUser = u1.userid
+                LEFT JOIN users as u2
+                ON protocol.protocolUpdateUser = u2.userid
+                INNER JOIN pinout
+                ON pinout.inOutId = protocolInOut
+                ORDER BY protocol.protocolYear DESC, protocol.protocolNo DESC
+                ');
+            
+            $results = $this->db->resultSet();
+            return $results;
+        }
+
         public function getProtocolById($id){
             $this->db->query('SELECT protocol.*, pinout.inOutDescription FROM protocol 
             INNER JOIN pinout

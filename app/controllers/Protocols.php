@@ -24,6 +24,16 @@ Class Protocols extends Controller {
         $this->view('protocols/index', $data);
     }
 
+    public function all(){
+        //Get Protocols
+        $protocols = $this->protocolModel->getAllProtocols();
+        $data = [
+            'protocols' => $protocols,
+        ];
+        $this->view('protocols/all', $data);
+    }
+
+
     public function add(){
         if($_SESSION['user_role_no'] < 1 || $_SESSION['user_role_no'] > 2 ){
             flasherror('protocol_message', 'Δεν έχετε δικαιώματα');
