@@ -12,16 +12,17 @@ jQuery("document").ready(function($){
 
 			},
 			"order": [[0, "desc"]],
+			"pageLength": 25,
 			"processing": true,
 			
 		});
 	} );
 
 	$(window).scroll(function () {
-		if ($(this).scrollTop()>0) {
-			$('nav').addClass("f-nav");
+		if ($(this).scrollTop()>50) {
+			$('thead').addClass("f-nav");
 	} else {
-		$('nav').removeClass("f-nav");
+		$('thead').removeClass("f-nav");
 		}
 	});
 

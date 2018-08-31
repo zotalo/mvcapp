@@ -11,7 +11,7 @@
         </div>
     </div>
     <table id="tprot" class="table table-hover table-sm loader">
-        <thead class="thead-dark">
+        <thead id ="tablehead" class="thead-dark">
             <th scope="col">Αρ.Πρωτ.</th>
             <th scope="col">Ημ.Πρωτ.</th>
             <th scope="col">Θέμα</th>

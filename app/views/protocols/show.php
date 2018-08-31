@@ -16,7 +16,7 @@
     <p><strong>Από/Προς: </strong><?php echo $data['protocol']->protocolFromTo; ?></p>
     <p><strong>Περιγραφή: </strong><?php echo $data['protocol']->protocolDescription; ?></p>
     <p><strong>Ημ. Έκδοσης: </strong><?php echo dateFormat($data['protocol']->protocolDateIssued); ?></p>
-    <p><strong>Αρ. Εισ: </strong><?php echo $data['protocol']->protocolDocumentNo; ?></p>
+    <p><strong>Αριθμός Σχετικού Εγγράφου: </strong><?php echo $data['protocol']->protocolDocumentNo; ?></p>
     <?php if($data['file']==null): ?>
         <form action="<?php echo URLROOT;?>/files/add"method="post">
             <div class="form-group">

@@ -7,9 +7,7 @@ body{
     z-index: 1;
     background-color: rgba(0,0,0,0.5)!important;
     position: fixed!important; 
-    left: 0; 
     top: 0; 
-    width: 100%;
     }
 
 footer {
