@@ -7,6 +7,7 @@
         }
 
         public function getProtocols(){
+            $currentyear = getCurrentYear();
             $this->db->query('
                 SELECT protocol.*,
                 u1.username,
@@ -19,8 +20,10 @@
                 ON protocol.protocolUpdateUser = u2.userid
                 INNER JOIN pinout
                 ON pinout.inOutId = protocolInOut
+                WHERE protocol.protocolYear = :currentyear
                 ORDER BY protocol.protocolYear DESC, protocol.protocolNo DESC
                 ');
+                $this->db->bind(':currentyear', $currentyear);
             
             $results = $this->db->resultSet();
             return $results;

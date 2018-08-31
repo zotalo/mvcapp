@@ -2,7 +2,7 @@
 <?php flash('protocol_message'); ?>
     <div class="row mb-3">
         <div class="col-md-6">
-            <h1>Πρωτόκολλο</h1>
+            <h1>Πρωτόκολλο <?php echo $data['currentyear'];?></h1>
         </div>
         <div class="col-md-6">
             <a href="<?php echo URLROOT; ?>/protocols/add" class="btn btn-primary pull-right">
@@ -22,7 +22,7 @@
         <tbody class="table-hover">
             <?php foreach($data['protocols'] as $protocols) : ?>
             <tr>
-                <th scope="row"><a href="<?php echo URLROOT; ?>/protocols/show/<?php echo $protocols->protocolId;?>"><?php echo $protocols->protocolYear. "." . $protocols->protocolNo;?></a></td>
+                <th scope="row"><a href="<?php echo URLROOT; ?>/protocols/show/<?php echo $protocols->protocolId;?>"><?php echo $protocols->protocolNo;?></a></td>
                 <td><?php echo dateFormat($protocols->protocolDate); ?></td>
                 <td><?php echo $protocols->protocolSubject;?></td>
                 <td><?php echo $protocols->inOutDescription;?></td>

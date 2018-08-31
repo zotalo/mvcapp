@@ -15,9 +15,11 @@ Class Protocols extends Controller {
 
     public function index(){
         //Get Protocols
+        $currentyear = getCurrentYear();
         $protocols = $this->protocolModel->getProtocols();
         $data = [
             'protocols' => $protocols,
+            'currentyear' => $currentyear,
         ];
         $this->view('protocols/index', $data);
     }
