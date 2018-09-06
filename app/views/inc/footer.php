@@ -1,7 +1,7 @@
 </div>
 <footer class="bg-dark">
   <div class="container text-light" id="footer">
-  &copy; 2018 - Σώμα Ορκωτών Ελεγκτών Λογιστών
+  &copy; 2018 - <?php echo date("Y");?> Σώμα Ορκωτών Ελεγκτών Λογιστών
   </div>
 </footer>
 <script

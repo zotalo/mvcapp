@@ -2,6 +2,9 @@
 
 Class Files extends Controller {
     public function __construct(){
+        if(!isLoggedIn()){
+            redirect('users/login');
+        }
         $this->fileModel = $this->model('File');
         $this->protocolModel = $this->model('Protocol');
 

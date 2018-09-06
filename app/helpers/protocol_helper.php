@@ -6,6 +6,11 @@
         // return $row;
         return $cy;
     }
+
+    function getCurrentDate(){
+        $cd = date("Y-m-d");
+        return $cd;
+    }
     
     function newProtocol($current){
         if(($current)== null){

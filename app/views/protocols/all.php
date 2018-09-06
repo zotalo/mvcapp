@@ -2,7 +2,7 @@
 <?php flash('protocol_message'); ?>
     <div class="row mb-3">
         <div class="col-md-6">
-            <h1>Πρωτόκολλο</h1>
+            <h1>Πρωτόκολλο [Όλα]</h1>
         </div>
         <div class="col-md-6">
             <a href="<?php echo URLROOT; ?>/protocols/add" class="btn btn-primary pull-right">

@@ -3,11 +3,12 @@
 Class Protocols extends Controller {
     public function __construct(){
         if(!isLoggedIn()){
-            redirect('pages/index');
+            redirect('users/login');
         }
-        if( $_SESSION['user_role_no'] == 0){
+        else if($_SESSION['user_role_no'] == 0){
             redirect('users/wait');
         }
+        
         $this->protocolModel = $this->model('Protocol');
         $this->userModel = $this->model('User');
         $this->fileModel = $this->model('File');
@@ -93,7 +94,7 @@ Class Protocols extends Controller {
     } else {
         $data = [
             'subject'=> '',
-            'pdate'=> '',
+            'pdate'=> getCurrentDate(),
             'description'=> '',
             'fromto'=> '',
             'nodoc'=> '',

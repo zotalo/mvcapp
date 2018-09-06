@@ -3,8 +3,8 @@
         <div class="col-md-6 mx-auto">
             <div class="card card-body bg-light mt-5">
                 <?php flash('register_success'); ?>
-                <h2>Login</h2>
-                <p>Please fill in your credentials to log in</p>
+                <h2>Σύνδεση</h2>
+                <p>Συμπληρώστε τα στοιχεία σας για να συνδεθείτε</p>
                 <form action="<?php echo URLROOT; ?>/users/login" method="post">
                 <div class="form-group">
                     <label for="email">Email: <sup>*</sup></label>
@@ -18,10 +18,10 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="submit" value="Login" class="btn btn-success btn-block">
+                        <input type="submit" value="Σύνδεση" class="btn btn-success btn-block">
                     </div>
                     <div class="col">
-                        <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light btn-block">No account? Register</a>
+                        <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light btn-block">Εγγραφή</a>
                     </div>
                 </div>
                 </form>
