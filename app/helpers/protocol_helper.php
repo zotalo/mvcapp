@@ -1,16 +1,5 @@
 <?php
-    function getCurrentYear(){
-        $cy = date("Y");
-        // $this->db->query('SELECT YEAR(CURRENT_DATE)');
-        // $row = $this->db->single();
-        // return $row;
-        return $cy;
-    }
-
-    function getCurrentDate(){
-        $cd = date("Y-m-d");
-        return $cd;
-    }
+    
     
     function newProtocol($current){
         if(($current)== null){

@@ -17,3 +17,13 @@ function dateFormatH($date){
     return $fdate;
     }
 }
+
+function getCurrentYear(){
+    $cy = date("Y");
+    return $cy;
+}
+
+function getCurrentDate(){
+    $cd = date("Y-m-d");
+    return $cd;
+}
