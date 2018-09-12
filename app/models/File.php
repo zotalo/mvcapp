@@ -22,7 +22,11 @@ Class File {
     }
 
     public function getFileById($id){
-
+        $this->db->query('SELECT * FROM files WHERE fileId = :id');
+        
+        $this->db->bind(':id', $id);
+        $row = $this->db->single();
+        return $row;
     }
 
     public function getProtocolFile($id){
