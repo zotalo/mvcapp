@@ -18,4 +18,50 @@ Class Files extends Controller {
         ];
         $this->view('files/index', $data);
     }
+
+    public function add($id){
+        
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Sanitize POST array
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $protocol = $this->protocolModel->getProtocolById($id);
+            $name = basename($_FILES['file']['name']);
+            $ext = pathinfo($name,PATHINFO_EXTENSION);
+            $data = [
+                'protocol' =>$id,
+                'year'=> $protocol->protocolYear,
+                'protocolno' => $protocol->protocolNo,
+                'name'=> $name,
+                'ext' => $ext,
+                'directory' => UPLOADS,
+                'ext_err' =>'',
+                'file_err' =>'',
+
+            ];
+
+            //Data Validation
+            $filetype = $this->fileModel->getFileType($data['ext']);
+            
+            if(empty($filetype)){
+                $data['ext_err'] = 'Ο συγκεκριμένος τύπος αρχείου δεν υποστηρίζεται';
+            }
+            if(empty($_FILES['file']['name'])){
+                $data['file_err'] = 'Δεν επιλέξατε αρχείο';
+            }
+            if(empty($data['ext_err']) && empty($data['file_err'])){
+                //Validated
+                $data['ftid'] = $filetype->fileTypeId;
+                $data['file'] = $data['directory'].'/'.$data['year'].'/'.$data['protocolno'].'-'.$data['name'];
+                if($this->fileModel->addFile($data)){
+                    flash('file_message', 'Το αρχείο ' . $data['file'].'ανέβηκε.');
+                    redirect('protocols/show/'.$id);
+                } else {
+                    die('Something went wrong');
+                }
+            } else {
+                echo $data['ext_err'] . $data['file_err'];
+                $this->view('protocols/show/'.$id, $data);
+            }
+        }
+    }
 }

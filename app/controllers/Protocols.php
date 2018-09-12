@@ -114,12 +114,14 @@ Class Protocols extends Controller {
         if(empty($file)){
             $filedata = [
                 'file' => null,
-                'url' => null
+                'url' => null,
+                'name' => null
             ];
         } else {
             $filedata = [
                 'file' => $file->fileProtocolId,
-                'url' => $file->fileUrl
+                'url' => $file->fileUrl,
+                'name' => $file->fileName
             ];
         }
         $data = [
@@ -136,7 +138,8 @@ Class Protocols extends Controller {
             'nodoc' => $protocol->protocolDocumentNo,
             'idate' => $protocol->protocolDateIssued,
             'file' =>$filedata['file'],
-            'url' =>$filedata['url']
+            'url' =>$filedata['url'],
+            'name' =>$filedata['name']
             
         ];
         $this->view('protocols/show', $data);

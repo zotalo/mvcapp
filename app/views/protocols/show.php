@@ -18,7 +18,7 @@
     <p><strong>Ημ. Έκδοσης: </strong><?php echo dateFormat($data['protocol']->protocolDateIssued); ?></p>
     <p><strong>Αριθμός Σχετικού Εγγράφου: </strong><?php echo $data['protocol']->protocolDocumentNo; ?></p>
     <?php if($data['file']==null): ?>
-        <form action="<?php echo URLROOT;?>/files/add"method="post">
+        <form action="<?php echo URLROOT;?>/files/add/<?php echo $data['protocol']->protocolId; ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="file">Αρχείο</label>
                 <input type="file" name="file"  >
@@ -27,7 +27,7 @@
             <input type="submit" class="btn btn-success" value="Ανέβασμα Αρχείου">
         </form>
     <?php else: ?>
-        <p><strong>Επισυναπτόμενο: </strong><a href="<?php echo URLROOT;?>/files/show/<?php echo $data['file'];?>"><?php echo $data['url']; ?></a></p>
+        <p><strong>Επισυναπτόμενο: </strong><a href="<?php echo URLROOT;?>/files/show/<?php echo $data['file'];?>"><?php echo $data['name']; ?></a></p>
     <?php endif;?>
 
 </div>
