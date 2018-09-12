@@ -66,5 +66,9 @@ Class Files extends Controller {
     }
     public function show($id){
         $file = $this->fileModel->getFileById($id);
+        $data = [
+            'url'=> $file->fileUrl
+        ];
+        $this->view('files/show', $data);
     }
 }
