@@ -16,7 +16,7 @@
             <?php foreach($data['files'] as $files) : ?>
             <tr>
                 <th scope="row"><a href="<?php echo URLROOT; ?>/protocols/show/<?php echo $files->fileProtocolId;?>"><?php echo $files->fileProtocolId?></a></td>
-                <td><?php echo $files->fileId; ?></td>
+                <td><a href="<?php echo URLROOT;?>/files/show/<?php echo $files->fileId;?>"><?php echo $files->fileId; ?></a></td>
                 <td><?php echo $files->fileTypeName;?></td>
                 <td><?php echo $files->fileName; ?></td>
                 <td><?php echo $files->fileUrl; ?></td>

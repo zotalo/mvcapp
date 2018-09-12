@@ -119,7 +119,7 @@ Class Protocols extends Controller {
             ];
         } else {
             $filedata = [
-                'file' => $file->fileProtocolId,
+                'file' => $file->fileId,
                 'url' => $file->fileUrl,
                 'name' => $file->fileName
             ];
