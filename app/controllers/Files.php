@@ -51,7 +51,7 @@ Class Files extends Controller {
             if(empty($data['ext_err']) && empty($data['file_err'])){
                 //Validated
                 $data['ftid'] = $filetype->fileTypeId;
-                $data['file'] = UPLOADS.$data['year'].'\\'.$data['protocolno'].'-'.$data['name'];
+                $data['file'] = UPLOADS.$data['year'].'/'.$data['protocolno'].'-'.$data['name'];
                 if(move_uploaded_file($_FILES['file']['tmp_name'],$data['file'])){
                 if($this->fileModel->addFile($data)){
                     flash('file_message', 'Το αρχείο ' . $data['file'].'ανέβηκε.');
