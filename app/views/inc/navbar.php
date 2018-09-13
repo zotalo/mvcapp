@@ -15,9 +15,9 @@
               <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/protocols/all">Όλα Τα Έτη</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/files/index">Αρχεία</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">Σχετικά</a>
           </li>
