@@ -12,7 +12,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 //Url Root
 define('URLROOT', 'http://localhost/teaprotocol');
 //Directory For Saves
-define('UPLOADS', APPROOT.'\\uploads\\');
+define('UPLOADS', $_SERVER['DOCUMENT_ROOT'].'teaprotocol/app/uploads/');
 //Site Name
 define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
