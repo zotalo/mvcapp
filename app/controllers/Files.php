@@ -51,14 +51,15 @@ Class Files extends Controller {
             if(empty($data['ext_err']) && empty($data['file_err'])){
                 //Validated
                 $data['ftid'] = $filetype->fileTypeId;
-                $data['file'] = APPROOT.'/uploads/'.$data['year'].'/'.$data['protocolno'].'-'.$data['name'];
+                $data['file'] = APPROOT.'\\uploads\\'.$data['year'].'\\'.$data['protocolno'].'-'.$data['name'];
                 if(move_uploaded_file($_FILES['file']['tmp_name'],$data['file'])){
                 if($this->fileModel->addFile($data)){
                     flash('file_message', 'Το αρχείο ' . $data['file'].'ανέβηκε.');
                     redirect('protocols/show/'.$id);
                 } else {
                     die('Something went wrong');
-                }}
+                }
+            }
             } else {
                 echo $data['ext_err'] . $data['file_err'];
                 $this->view('protocols/show/'.$id, $data);
