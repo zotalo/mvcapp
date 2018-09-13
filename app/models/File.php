@@ -49,7 +49,7 @@ Class File {
         $this->db->bind(':id', $data['protocol']);
         $this->db->bind(':ftype', $data['ftid']);
         $this->db->bind(':name', $data['name']);
-        $this->db->bind(':url', $data['file']);
+        $this->db->bind(':url', $data['url']);
         //Execute
         if($this->db->execute()){
             return true;
