@@ -12,7 +12,7 @@ define('APPROOT', dirname(dirname(__FILE__)));
 //Url Root
 define('URLROOT', 'http://localhost/teaprotocol');
 //Directory For Saves
-define('UPLOADS', URLROOT.'/public/uploads');
+define('UPLOADS', APPROOT.'\\uploads\\');
 //Site Name
 define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
