@@ -23,6 +23,7 @@ Class Files extends Controller {
         
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Sanitize POST array
+            
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $protocol = $this->protocolModel->getProtocolById($id);
             $name = basename($_FILES['file']['name']);
@@ -50,6 +51,9 @@ Class Files extends Controller {
             }
             if(empty($data['ext_err']) && empty($data['file_err'])){
                 //Validated
+                if(!file_exists(UPFOLD.$data['year'])){
+                    mkdir(UPFOLD.$data['year'], 0755, true);
+                }
                 $data['ftid'] = $filetype->fileTypeId;
                 $data['file'] = UPFOLD.$data['year'].'/'.$data['year'].$data['protocolno'].'-'.$data['name'];
                 $data['url'] = UPLOADS.$data['year'].'/'.$data['year'].$data['protocolno'].'-'.$data['name'];
@@ -85,7 +89,7 @@ Class Files extends Controller {
             $filepath = dirname(__FILE__,2).$files->fileUrl;
             if(unlink($filepath)){
             if($this->fileModel->deleteFile($id)){
-                flash('file_message', 'Το αρχείο '. $filename. 'διεγράφη!');
+                flash('file_message', 'Το αρχείο '. $filename. ' διεγράφη!');
                 redirect('protocols');
             } else {
                 die('Something went wrong');

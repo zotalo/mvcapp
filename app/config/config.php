@@ -18,7 +18,7 @@ define('UPFOLD', $_SERVER['DOCUMENT_ROOT'].'teaprotocol/public/uploads/');
 //Site Name
 define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
-define('APPVERSION', '0.7-1808(beta)');
+define('APPVERSION', '1.0 - Σεπτέμβριος 2018');
 //Author
 define('APPDEVELOPER', 'Σιορόκος Γεώργιος');
 //Author Contact
