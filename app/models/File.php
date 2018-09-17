@@ -59,7 +59,16 @@ Class File {
     }
 
     public function deleteFile($id){
+        $this->db->query('DELETE FROM files WHERE fileId = :id');
+        //Bind values
+        $this->db->bind(':id', $id);
 
+        //Execute
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getFileType($ext){

@@ -73,7 +73,30 @@ Class Files extends Controller {
             'url'=> $file->fileUrl,
             'name'=> $file->fileName,
             'id' => $file->fileProtocolId,
+            'fileid' => $file->fileId,
         ];
         $this->view('files/show', $data);
     }
-}
+
+    public function delete($id){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $files = $this->fileModel->getFileById($id);
+            $filename = $files->fileName;
+            $filepath = dirname(__FILE__,2).$files->fileUrl;
+            if(unlink($filepath)){
+            if($this->fileModel->deleteFile($id)){
+                flash('file_message', 'Το αρχείο '. $filename. 'διεγράφη!');
+                redirect('protocols');
+            } else {
+                die('Something went wrong');
+            }
+        } else {
+            flasherror('file_message', 'Σφάλμα! Δεν έγινε η διαγρααφή!');
+            echo var_dump($filepath);
+           // redirect ('protocols');
+        }
+        } else {
+            redirect('protocols');
+        }
+    }
+}   
