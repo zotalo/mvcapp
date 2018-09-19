@@ -14,7 +14,7 @@ define('URLROOT', 'http://localhost/teaprotocol');
 //Directory For Saves
 define('UPLOADS', '../../public/uploads/');
 
-define('UPFOLD', $_SERVER['DOCUMENT_ROOT'].'teaprotocol/public/uploads/');
+define('UPFOLD', $_SERVER['DOCUMENT_ROOT'].'/teaprotocol/public/uploads/');
 //Site Name
 define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version

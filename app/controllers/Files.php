@@ -59,8 +59,8 @@ Class Files extends Controller {
                 $data['url'] = UPLOADS.$data['year'].'/'.$data['year'].$data['protocolno'].'-'.$data['name'];
                 if(move_uploaded_file($_FILES['file']['tmp_name'],$data['file'])){
                 if($this->fileModel->addFile($data)){
-                    flash('file_message', 'Το αρχείο ' . $data['file'].'ανέβηκε.');
-                    redirect('protocols/show/'.$id);
+                    flash('protocol_message', 'Το αρχείο ' . $data['file'].'ανέβηκε.');
+                    redirect('protocols');
                 } else {
                     die('Something went wrong');
                 }
@@ -95,9 +95,8 @@ Class Files extends Controller {
                 die('Something went wrong');
             }
         } else {
-            flasherror('file_message', 'Σφάλμα! Δεν έγινε η διαγρααφή!');
-            echo var_dump($filepath);
-           // redirect ('protocols');
+            flasherror('protocol_message', 'Σφάλμα! Δεν έγινε η διαγρααφή!');
+            redirect ('protocols');
         }
         } else {
             redirect('protocols');
