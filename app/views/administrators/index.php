@@ -15,7 +15,7 @@
             <div class="card col-3" style="width: 18rem;">
                 <img class="card-img-top" src="<?php echo URLROOT; ?>/public/img/folder.png" alt="users">
                 <div class="card-body mx-auto">
-                    <a href="<?php echo URLROOT; ?>/administrators/files" class="btn btn-dark">Διαχείριση Αρχείων</a>
+                    <a href="<?php echo URLROOT; ?>/files/index" class="btn btn-dark">Διαχείριση Αρχείων</a>
                 </div>
             </div>
             <div class="card col-3" style="width: 18rem;">

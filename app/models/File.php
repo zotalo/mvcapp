@@ -10,10 +10,14 @@ Class File {
     public function getFiles(){
         $this->db->query('
             SELECT files.*,
-            filetype.fileTypeName
+            filetype.fileTypeName,
+            protocol.protocolYear,
+            protocol.protocolNo
             FROM files
             INNER JOIN filetype
             ON files.fileId = filetype.fileTypeId
+            INNER JOIN protocol
+            ON files.fileProtocolId = protocol.protocolId
             ORDER BY files.fileProtocolid DESC
         ');
 
