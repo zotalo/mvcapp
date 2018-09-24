@@ -15,7 +15,7 @@ Class File {
             protocol.protocolNo
             FROM files
             INNER JOIN filetype
-            ON files.fileId = filetype.fileTypeId
+            ON files.fileType = filetype.fileTypeId
             INNER JOIN protocol
             ON files.fileProtocolId = protocol.protocolId
             ORDER BY files.fileProtocolid DESC
