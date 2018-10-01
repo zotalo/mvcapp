@@ -20,7 +20,7 @@ define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
 define('APPVERSION', '1.0 - Σεπτέμβριος 2018');
 //Author
-define('APPDEVELOPER', 'Σιορόκος Γεώργιος');
+define('APPDEVELOPER', 'Τμήμα Μηχανογράφησης ΣΟΕΛ');
 //Author Contact
-define('DEVELOPEREMAIL', 'george.siorokos@soel.gr');
+define('DEVELOPEREMAIL', 'it@soel.gr');
 define('DEVELOPERPHONE', '2103891494');
