@@ -61,7 +61,8 @@ Class Protocols extends Controller {
                 'fromto_err' => '',
                 'nodoc_err' => '',
                 'idate_err' => '',
-                // 'file_err' => ''
+                'file_err' => '',
+                'ext_err' => '',
             ];
 
         //Validate data
@@ -139,7 +140,9 @@ Class Protocols extends Controller {
             'idate' => $protocol->protocolDateIssued,
             'file' =>$filedata['file'],
             'url' =>$filedata['url'],
-            'name' =>$filedata['name']
+            'name' =>$filedata['name'],
+            'ext_err' => '',
+            'file_err' =>'',
             
         ];
         $this->view('protocols/show', $data);

@@ -22,7 +22,10 @@
             <div class="form-group">
                 <label for="file">Αρχείο</label>
                 <input type="file" name="file"  >
+                <div>
                 <span class="invalid-feedback"><?php echo $data['file_err'];?></span>
+                <span class="invalid-feedback"><?php echo $data['ext_err'];?></span>
+                </div>
             </div>
             <input type="submit" class="btn btn-success" value="Ανέβασμα Αρχείου">
         </form>

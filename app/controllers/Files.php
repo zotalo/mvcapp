@@ -43,12 +43,16 @@ Class Files extends Controller {
             //Data Validation
             $filetype = $this->fileModel->getFileType($data['ext']);
             
-            if(empty($filetype)){
+            // if(empty($_FILES['file']['name'])){
+            //     $data['file_err'] = 'Δεν επιλέξατε αρχείο';
+            // }
+            if (!is_uploaded_file($_FILES['file']['name'])){
+                $data['file_err'] = 'Δεν έχετε επιλέξει αρχείο';
+            }
+            else if(empty($filetype)){
                 $data['ext_err'] = 'Ο συγκεκριμένος τύπος αρχείου δεν υποστηρίζεται';
             }
-            if(empty($_FILES['file']['name'])){
-                $data['file_err'] = 'Δεν επιλέξατε αρχείο';
-            }
+            
             if(empty($data['ext_err']) && empty($data['file_err'])){
                 //Validated
                 if(!file_exists(UPFOLD.$data['year'])){
@@ -66,8 +70,10 @@ Class Files extends Controller {
                 }
             }
             } else {
-                echo $data['ext_err'] . $data['file_err'];
-                $this->view('protocols/show/'.$id, $data);
+             //   echo $data['ext_err'] . $data['file_err'];
+             $this->view('protocols/show'.$id, $data);
+                redirect('protocols/show/' .$id);
+                
             }
         }
     }
