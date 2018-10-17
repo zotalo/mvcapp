@@ -71,7 +71,7 @@ Class Files extends Controller {
             }
             } else {
              //   echo $data['ext_err'] . $data['file_err'];
-             $this->view('protocols/show'.$id, $data);
+             $this->view('protocols/show/'.$id, $data);
                 redirect('protocols/show/' .$id);
                 
             }
@@ -101,7 +101,7 @@ Class Files extends Controller {
                 die('Something went wrong');
             }
         } else {
-            flasherror('protocol_message', 'Σφάλμα! Δεν έγινε η διαγρααφή!');
+            flasherror('protocol_message', 'Σφάλμα! Δεν έγινε η διαγραφή!');
             redirect ('protocols');
         }
         } else {
