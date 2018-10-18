@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
+<?php flash('protocol_message'); ?>
 <a href="<?php echo URLROOT; ?>/protocols" class="btn btn-light"><i class="fa fa-backward"></i>Επιστροφή</a>
 <br>
 <h1><?php echo $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. " [" . dateFormat($data['protocol']->protocolDate)."]";?></h1>
@@ -42,4 +43,6 @@
         <input type="submit" value="Διαγραφή" class="btn btn-danger">
     </form>
 <?php endif; ?>
+<span class="invalid-feedback"><?php echo $data['file_err'];?></span>
+                <span class="invalid-feedback"><?php echo $data['ext_err'];?></span>
 <?php require APPROOT . '/views/inc/footer.php';?>

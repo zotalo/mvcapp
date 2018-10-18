@@ -46,10 +46,11 @@ Class Files extends Controller {
             // if(empty($_FILES['file']['name'])){
             //     $data['file_err'] = 'Δεν επιλέξατε αρχείο';
             // }
-            if (!is_uploaded_file($_FILES['file']['name'])){
-                $data['file_err'] = 'Δεν έχετε επιλέξει αρχείο';
-            }
-            else if(empty($filetype)){
+              if (!is_uploaded_file($_FILES['file']['tmp_name'])){
+                  $data['file_err'] = 'Δεν έχετε επιλέξει αρχείο';
+              }
+            else 
+            if(empty($filetype)){
                 $data['ext_err'] = 'Ο συγκεκριμένος τύπος αρχείου δεν υποστηρίζεται';
             }
             
@@ -63,16 +64,18 @@ Class Files extends Controller {
                 $data['url'] = UPLOADS.$data['year'].'/'.$data['year'].$data['protocolno'].'-'.$data['name'];
                 if(move_uploaded_file($_FILES['file']['tmp_name'],$data['file'])){
                 if($this->fileModel->addFile($data)){
-                    flash('protocol_message', 'Το αρχείο ' . $data['file'].'ανέβηκε.');
-                    redirect('protocols');
+                    flash('protocol_message', 'Το αρχείο ' . $data['name'].' ανέβηκε.');
+                    redirect('protocols/show/'.$id);
                 } else {
                     die('Something went wrong');
                 }
             }
             } else {
              //   echo $data['ext_err'] . $data['file_err'];
-             $this->view('protocols/show/'.$id, $data);
+            // $this->view('protocols/show/'.$id, $data);
+                flasherror('protocol_message', 'Δεν ολοκληρώθηκε η ενέργεια.');
                 redirect('protocols/show/' .$id);
+                
                 
             }
         }
