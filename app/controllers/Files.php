@@ -73,7 +73,7 @@ Class Files extends Controller {
             } else {
              //   echo $data['ext_err'] . $data['file_err'];
             // $this->view('protocols/show/'.$id, $data);
-                flasherror('protocol_message', 'Δεν ολοκληρώθηκε η ενέργεια.');
+                flasherror('protocol_message', $data[file_err].' '.$data[ext_err]);
                 redirect('protocols/show/' .$id);
                 
                 
