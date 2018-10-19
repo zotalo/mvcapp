@@ -42,6 +42,7 @@
                 ON protocol.protocolUpdateUser = u2.userid
                 INNER JOIN pinout
                 ON pinout.inOutId = protocolInOut
+                WHERE protocol.protocolYear < YEAR(CURDATE())
                 ORDER BY protocol.protocolYear DESC, protocol.protocolNo DESC
                 ');
             
