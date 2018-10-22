@@ -12,19 +12,19 @@ jQuery("document").ready(function($){
 
 			},
 			"order": [[0, "desc"]],
-			"pageLength": 25,
+			"pageLength": 10,
 			"processing": true,
 			
 		});
 	} );
 
-	$(window).scroll(function () {
-		if ($(this).scrollTop()>50) {
-			$('thead').addClass("f-nav");
-	} else {
-		$('thead').removeClass("f-nav");
-		}
-	});
+	// $(window).scroll(function () {
+	// 	if ($(this).scrollTop()>50) {
+	// 		$('thead').addClass("f-nav");
+	// } else {
+	// 	$('thead').removeClass("f-nav");
+	// 	}
+	// });
 
 	$(".delete").on("submit", function(){
         return confirm("Πρόκειται να διαγράψετε μία εγγραφή, ΟΚ;");

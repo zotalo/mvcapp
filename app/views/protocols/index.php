@@ -17,7 +17,7 @@
             <th scope="col">Θέμα</th>
             <th scope="col">Εισ/Εξερ</th>
             <th scope="col">Από/Προς</th>
-            <th scope="col">Σχετικός Αρ.</th>
+            <th scope="col">Σχετ. Αρ.</th>
         </thead>
         <tbody class="table-hover">
             <?php foreach($data['protocols'] as $protocols) : ?>

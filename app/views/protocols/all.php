@@ -2,7 +2,8 @@
 <?php flash('protocol_message'); ?>
     <div class="row mb-3">
         <div class="col-md-6">
-            <h1>Πρωτόκολλο [Όλα]</h1>
+            <h1>Πρωτόκολλο</h1>
+            <h2>[Προηγούμενα Έτη]</h2>
         </div>
         <div class="col-md-6">
             <a href="<?php echo URLROOT; ?>/protocols/addold" class="btn btn-primary pull-right">
@@ -18,7 +19,7 @@
             <th scope="col">Θέμα</th>
             <th scope="col">Εισ/Εξερ</th>
             <th scope="col">Από/Προς</th>
-            <th scope="col">Σχετικός Αρ.</th>
+            <th scope="col">Σχετ. Αρ.</th>
         </thead>
         <tbody class="table-hover">
             <?php foreach($data['protocols'] as $protocols) : ?>
