@@ -12,7 +12,7 @@
           <li class="nav-item dropdown" data-hover="dropdown">
             <a class="nav-link" href="<?php echo URLROOT; ?>/protocols/index">Πρωτόκολλο</a>
             <ul class="dropdown-menu bg-dark">
-              <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/protocols/all">Όλα Τα Έτη</a></li>
+              <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/protocols/all">Προηγούμενα Έτη</a></li>
             </ul>
           </li>
           <!-- <li class="nav-item">
