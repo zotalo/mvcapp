@@ -7,19 +7,24 @@
         </div>
     </div>
     <div class="row justify-content-around">
-        <div class="card col-3">
+        <div class="card col-3  mb-3 d-inline-block">
             <p class="card-text">
-                ID: <?php echo $data['id'];?>
+                <span class="font-weight-bold">ID: </span><span><?php echo $data['id'];?></span>
             </p>
             <p class="card-text">
-                Ρόλος: <?php echo $data['role'];?>
+            <span class="font-weight-bold">Ρόλος: </span><span><?php echo $data['role'];?></span>
             </p>
             <p class="card-text">
-                Όνομα: <?php echo $data['name'];?>
+            <span class="font-weight-bold"> Όνομα: </span><span><?php echo $data['name'];?></span>
             </p>
             <p class="card-text">
-                Email: <?php echo $data['email'];?>
+            <span class="font-weight-bold"> Email: </span><span><?php echo $data['email'];?></span>
             </p>
+            <div class="col-md-6">
+            <a href="<?php echo URLROOT; ?>/users/change" class="btn btn-secondary">
+                <i class="fa fa-address-card"></i> Αλλαγή Κωδικού
+            </a>
+        </div>
         </div>
     </div>
 <?php require APPROOT . '/views/inc/footer.php';?>

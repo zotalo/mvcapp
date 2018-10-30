@@ -5,7 +5,20 @@ class Users extends Controller{
     public function __construct(){
         $this->userModel = $this->model('User');
     }
-
+    public function index(){
+        if(!isLoggedIn()){
+            redirect('users/login');
+        }
+        $data = [
+            'title' => 'Πληροφορίες Χρήστη',
+            'id' => $_SESSION['user_id'],
+            'role' => $_SESSION['user_role'],
+            'name' => $_SESSION['user_name'],
+            'email' => $_SESSION['user_email'],
+            
+        ];
+        $this->view('users/index', $data);
+    }
     public function register(){
         //Check for POST
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -181,7 +194,9 @@ class Users extends Controller{
     }
 
     public function show(){
-        
+        if(!isLoggedIn()){
+            redirect('users/login');
+        }
         $data = [
             'title' => 'Πληροφορίες Χρήστη',
             'id' => $_SESSION['user_id'],
