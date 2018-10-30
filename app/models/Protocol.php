@@ -140,4 +140,9 @@
             }
         
     }
+
+        public function lastId(){
+            $last = $this->db->getLastId();
+            return $last;
+        }
     }

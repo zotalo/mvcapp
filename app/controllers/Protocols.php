@@ -82,8 +82,9 @@ Class Protocols extends Controller {
         if(empty($data['subject_err']) && empty($data['pdate_err']) && empty($data['fromto_err'])){
             //Validated
             if($this->protocolModel->addProtocol($data)){
+                $lastid = $this->protocolModel->lastId();
                 flash('protocol_message', 'Ολοκληρώθηκε η καταχώρηση');
-                redirect('protocols');
+                redirect('protocols/show/'.$lastid);
             } else {
                 die('Something went wrong');
             }
