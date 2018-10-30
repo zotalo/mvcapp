@@ -208,4 +208,21 @@ class Users extends Controller{
         $this->view('users/show', $data);
 
     }
+    public function change(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        
+        } else {
+              //Init data
+              $data = [
+                'current_password' => '',
+                'new_password' => '',
+                'confirm_new_password' => '',
+                'current_password_err' => '',
+                'new_password_err' => '',
+                'confirm_new_password_err' => ''
+            ];
+            // Load view
+            $this ->view('users/change', $data);
+        }
+    }
 }
