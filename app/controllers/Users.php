@@ -231,17 +231,17 @@ class Users extends Controller{
 
              // Validate Password
              if(empty($data['new_password'])){
-                $data['new_password_err'] = 'Please enter password';
+                $data['new_password_err'] = 'Δεν έχετε καταχωρήσει κωδικό';
             } elseif(strlen($data['new_password']) < 6){
-                $data['new_password_err'] = 'Password must be at least 6 characters';
+                $data['new_password_err'] = 'Ο κωδικός θα πρέπει να είναι τουλάχιστον 6 χαρακτήρες';
             }
 
              // Validate Confirm Password
              if(empty($data['confirm_new_password'])){
-                $data['confirm_new_password_err'] = 'Please confirm password';
+                $data['confirm_new_password_err'] = 'Παρακαλώ επιβεβαιώστε τον κωδικό';
             } else {
                 if($data['new_password']!= $data['confirm_new_password']){
-                    $data['confirm_new_password_err'] = 'Passwords do not match';
+                    $data['confirm_new_password_err'] = 'Οι κωδικοί δεν ταιριάζουν';
                 }
             }
             if(empty($data['current_password_err']) && empty($data['new_password_err']) && empty($data['confirm_new_password_err'])){

@@ -18,9 +18,10 @@ define('UPFOLD', $_SERVER['DOCUMENT_ROOT'].'/teaprotocol/public/uploads/');
 //Site Name
 define('SITENAME', 'ΤΕΑ-ΣΟΕΛ');
 //App Version
-define('APPVERSION', '1.0 - Σεπτέμβριος 2018');
+define('APPVERSION', '1.1 - Οκτώβριος 2018');
+define('APPCHANGES', 'Προσθήκη Λειτουργίας Αλλαγής Κωδικούς');
 //Author
-define('APPDEVELOPER', 'Τμήμα Μηχανογράφησης ΣΟΕΛ');
+define('APPDEVELOPER', 'Σιορόκος Γεώργιος');
 //Author Contact
-define('DEVELOPEREMAIL', 'it@soel.gr');
+define('DEVELOPEREMAIL', 'george.siorokos@soel.gr');
 define('DEVELOPERPHONE', '2103891494');
