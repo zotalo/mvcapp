@@ -209,11 +209,61 @@ class Users extends Controller{
 
     }
     public function change(){
+        if(!isLoggedIn()){
+            redirect('users/login');
+        }
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        
+            $data = [
+                'id' => $_SESSION['user_id'],
+                'current_password' => trim($_POST['current_password']),
+                'new_password' => trim($_POST['new_password']),
+                'confirm_new_password' => trim($_POST['confirm_new_password']),
+                'current_password_err' => '',
+                'new_password_err' => '',
+                'confirm_new_password_err' => '',
+            ];
+            //Validate Old Password
+            if($this->userModel->verifyPassword($data['id'], $data['current_password'])){
+                //password match
+            } else {
+                $data['current_password_err'] = 'Λάθος Κωδικός';
+            }
+
+             // Validate Password
+             if(empty($data['new_password'])){
+                $data['new_password_err'] = 'Please enter password';
+            } elseif(strlen($data['new_password']) < 6){
+                $data['new_password_err'] = 'Password must be at least 6 characters';
+            }
+
+             // Validate Confirm Password
+             if(empty($data['confirm_new_password'])){
+                $data['confirm_new_password_err'] = 'Please confirm password';
+            } else {
+                if($data['new_password']!= $data['confirm_new_password']){
+                    $data['confirm_new_password_err'] = 'Passwords do not match';
+                }
+            }
+            if(empty($data['current_password_err']) && empty($data['new_password_err']) && empty($data['confirm_new_password_err'])){
+                // Validated
+                
+                // Hash Password
+                $data['new_password'] = password_hash($data['new_password'], PASSWORD_DEFAULT);
+
+                //Register User
+                if($this->userModel->changePassword($data['id'], $data['new_password'])){
+                    flash('change_success', 'Η αλλαγή του κωδικού πραγματοποιήθηκε με επιτυχία');
+                    redirect('users/login');
+                } else {
+                   die('Something went wrong');
+                }
+
+            }  //Load view with errors
+            $this ->view('users/change', $data);
         } else {
               //Init data
               $data = [
+                'id' => $_SESSION['user_id'],
                 'current_password' => '',
                 'new_password' => '',
                 'confirm_new_password' => '',

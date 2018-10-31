@@ -21,7 +21,7 @@
         <span class="font-weight-bold"> Email: </span><span><?php echo $data['email'];?></span>
         </p>
         <div class="col-md-6">
-        <a href="<?php echo URLROOT; ?>/users/change" class="btn btn-secondary">
+        <a href="<?php echo URLROOT; ?>/users/change/<?php echo $_SESSION['user_id'];?>" class="btn btn-secondary">
             <i class="fa fa-address-card"></i> Αλλαγή Κωδικού
         </a>
     </div>

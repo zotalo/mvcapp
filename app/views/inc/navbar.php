@@ -25,7 +25,7 @@
         <ul class="navbar-nav ml-auto">
         <?php if(isset($_SESSION['user_id'])) : ?>
         <li class="nav-item ">
-            <a class="nav-link" href="<?php echo URLROOT;?>/users/show/<?php echo $_SESSION['user_id'];?>">Καλώς ήρθες <?php echo $_SESSION['user_name'] ." με ρόλο: ". $_SESSION['user_role']; ?></a>
+            <a class="nav-link" href="<?php echo URLROOT;?>/users/index/<?php echo $_SESSION['user_id'];?>">Καλώς ήρθες <?php echo $_SESSION['user_name'] ." με ρόλο: ". $_SESSION['user_role']; ?></a>
           </li>
           <?php if($_SESSION['user_role_no']==1) : ?>
           <li class="nav-item">

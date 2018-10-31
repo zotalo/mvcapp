@@ -82,4 +82,35 @@
         return $row;
         
       }
+
+      //Change Password
+      public function changePassword($id, $password){
+          $this->db->query('UPDATE users SET userhashpass = :newpass WHERE userid = :id');
+          //Bind Values
+          $this->db->bind(':id', $id);
+          $this->db->bind(':newpass', $password);
+           //Execute
+           if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+      }
+
+      //Verify OldPassword
+      public function verifyPassword($id, $password){
+        $this->db->query('SELECT userhashpass
+                        FROM users 
+                        WHERE userid = :id');
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+
+        $hashed_password = $row->userhashpass;
+        if(password_verify($password, $hashed_password)){
+            return true;
+        } else {
+            return false;
+        }
+    }
     }
