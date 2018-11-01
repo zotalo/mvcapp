@@ -9,18 +9,22 @@
         </a>
     </div>
 </div>
+<div class="card-columns">
 <?php foreach($data['users'] as $user) : ?>
-    <div class="card card-body mb-3">
-        <h4 class="card-title">
-            <?php echo $user->username; ?>
-        </h4>
-        <div class="bg-light p2 mb-3">
-           Role: <?php echo $user->rolesname; ?>
-        </div>
-        <p class="card-text">
-           Email:  <?php echo $user->email; ?>
-        </p>
-        <a href="<?php echo URLROOT; ?>/administrators/show/<?php echo $user->userid; ?>" class="btn btn-dark">More</a>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">
+                <?php echo $user->username; ?>
+            </h4>
+            <h6 class="card-subtitle bg-light p2 mb-3">
+            Role: <?php echo $user->rolesname; ?>
+            </h6>
+            <p class="card-text">
+            Email:  <?php echo $user->email; ?>
+            </p>
+            <a href="<?php echo URLROOT; ?>/administrators/show/<?php echo $user->userid; ?>" class="btn btn-dark">More</a>
+         </div>
     </div>
 <?php endforeach; ?>
+</div>
 <?php require APPROOT . '/views/inc/footer.php';?>
