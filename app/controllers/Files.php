@@ -87,6 +87,7 @@ Class Files extends Controller {
             'name'=> $file->fileName,
             'id' => $file->fileProtocolId,
             'fileid' => $file->fileId,
+            'ext' => $file->fileType,
         ];
         $this->view('files/show', $data);
     }
