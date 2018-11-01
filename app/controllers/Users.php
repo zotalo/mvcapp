@@ -263,6 +263,7 @@ class Users extends Controller{
         } else {
               //Init data
               $data = [
+                'title' => 'Αλλαγή κωδικού πρόσβασης',
                 'id' => $_SESSION['user_id'],
                 'current_password' => '',
                 'new_password' => '',

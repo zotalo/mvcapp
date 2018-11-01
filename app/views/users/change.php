@@ -1,4 +1,11 @@
 <?php require APPROOT . '/views/inc/header.php';?>
+<div class="text-center">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <h1><?php echo $data['title'];?></h1>
+        </div>
+    </div>
+</div>
 <a href="<?php echo URLROOT; ?>/users/index/<?php echo $data['id'];?>" class="btn btn-light"><i class="fa fa-backward"></i>Επιστροφή</a>
     <form action="<?php echo URLROOT; ?>/users/change" method="post">
         <div class="form-group">
