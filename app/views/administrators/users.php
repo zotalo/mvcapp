@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-6">
         <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-primary pull-right">
-            <i class="fa fa-pencil"></i> Add User
+            <i class="fa fa-pencil"></i> Προσθήκη Χρήστη
         </a>
     </div>
 </div>
@@ -22,7 +22,7 @@
             <p class="card-text">
             Email:  <?php echo $user->email; ?>
             </p>
-            <a href="<?php echo URLROOT; ?>/administrators/show/<?php echo $user->userid; ?>" class="btn btn-dark">More</a>
+            <a href="<?php echo URLROOT; ?>/administrators/show/<?php echo $user->userid; ?>" class="btn btn-dark">Περισσότερα</a>
          </div>
     </div>
 <?php endforeach; ?>
