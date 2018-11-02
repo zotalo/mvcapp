@@ -309,13 +309,27 @@ Class Protocols extends Controller {
         
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             //Get existing post from model
+            $files = $this->fileModel->getProtocolFile($id);
             $protocol = $this->protocolModel->getProtocolById($id);
             // Check for owner
-            
-            if($this->protocolModel->deleteProtocol($id)){
-                flash('protocol_message', 'Το Πρωτόκολλο '. $protocol->protocolYear .'.'.$protocol->protocolNo . ' Διεγράφη');
-                redirect('protocols');
-            } else {
+            $filename = $files->fileName;
+            $filepath = dirname(__FILE__,2).$files->fileUrl;
+            if(unlink($filepath)){
+                if($this->fileModel->deleteFile($files->fileId)){
+                    if($this->protocolModel->deleteProtocol($id)){
+                        flash('protocol_message', 'Το Πρωτόκολλο '. $protocol->protocolYear .'.'.$protocol->protocolNo . ' Διεγράφη');
+                        redirect('protocols');
+                    } else {
+                        flasherror('protocol_message', 'Δεν Πραγματοποιήθηκε η Διαγραφή');
+                        redirect('protocols/show/'.$id);
+                    }
+                } else {
+                    flasherror('protocol_message', 'Δεν Διεγράφη το Αρχείο');
+                    redirect('protocols/show/'.$id);
+                }
+            }else {
+                flasherror('protocol_message', 'Πρόβλημα στη διαγραφή! '.$files->fileName);
+                redirect('protocols/show/'.$id);
                 die('Something went wrong');
             }
         } else {
