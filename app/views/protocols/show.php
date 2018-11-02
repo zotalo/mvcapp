@@ -48,7 +48,8 @@
                 </div>
                 <div class="modal-body">    
                 <?php if($_SESSION['user_role_no'] ==2 || $_SESSION['user_role_no'] ==1) : ?>
-                    <form class="pull-right delete" action="<?php echo URLROOT; ?>/files/delete/<?php echo $data['fileid'];?>" method ="post">
+                    <form class="pull-right delete" action="<?php echo URLROOT; ?>/files/delete/<?php echo $data['file'];?>" method ="post">
+                    <?php echo URLROOT; ?>/files/delete/<?php echo $data['file'];?>
                         <input type="submit" value="Διαγραφή" class="btn btn-danger">
                     </form>
                 <?php endif; ?>
