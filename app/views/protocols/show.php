@@ -32,6 +32,41 @@
         </form>
     <?php else: ?>
         <p><strong>Επισυναπτόμενο: </strong><a href="<?php echo URLROOT;?>/files/show/<?php echo $data['file'];?>"><?php echo $data['name']; ?></a></p>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-att-modal-lg">
+            <?php echo $data['name'];?>
+        </button>
+
+        <!--MODAL-->
+        <div class="modal fade bd-att-modal-lg" id="attachment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Επισυναπτόμενο</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">    
+                <?php if($_SESSION['user_role_no'] ==2 || $_SESSION['user_role_no'] ==1) : ?>
+                    <form class="pull-right delete" action="<?php echo URLROOT; ?>/files/delete/<?php echo $data['fileid'];?>" method ="post">
+                        <input type="submit" value="Διαγραφή" class="btn btn-danger">
+                    </form>
+                <?php endif; ?>
+                <h1><?php echo $data['name'];?></h1>
+                <a href="<?php echo $data['url'];?>" class="btn btn-light"><i class="fa fa-download"></i>Λήψη Αρχείου</a>
+                <div class="embed-responsive embed-responsive-21by9">
+                    <?php if($data['ext']==1) : ?>
+                    <iframe class="embed-responsive-item" src="<?php echo $data['url'];?>#zoom=80">
+                    </iframe>
+                    <?php endif; ?>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
     <?php endif;?>
 
 </div>

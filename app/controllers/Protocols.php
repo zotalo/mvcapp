@@ -193,13 +193,15 @@ Class Protocols extends Controller {
             $filedata = [
                 'file' => null,
                 'url' => null,
-                'name' => null
+                'name' => null,
+                'ext' => null,
             ];
         } else {
             $filedata = [
                 'file' => $file->fileId,
                 'url' => $file->fileUrl,
-                'name' => $file->fileName
+                'name' => $file->fileName,
+                'ext' =>$file->fileType
             ];
         }
         $data = [
@@ -220,6 +222,7 @@ Class Protocols extends Controller {
             'name' =>$filedata['name'],
             'ext_err' => '',
             'file_err' =>'',
+            'ext' =>$filedata['ext']
             
         ];
         $this->view('protocols/show', $data);
