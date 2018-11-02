@@ -99,7 +99,7 @@ Class Files extends Controller {
             $filepath = dirname(__FILE__,2).$files->fileUrl;
             if(unlink($filepath)){
             if($this->fileModel->deleteFile($id)){
-                flash('file_message', 'Το αρχείο '. $filename. ' διεγράφη!');
+                flash('protocol_message', 'Το αρχείο '. $filename. ' διεγράφη!');
                 redirect('protocols');
             } else {
                 die('Something went wrong');
