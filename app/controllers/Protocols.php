@@ -312,6 +312,7 @@ Class Protocols extends Controller {
             $files = $this->fileModel->getProtocolFile($id);
             $protocol = $this->protocolModel->getProtocolById($id);
             // Check for owner
+            if(!empty($files)){
             $filename = $files->fileName;
             $filepath = dirname(__FILE__,2).$files->fileUrl;
             if(unlink($filepath)){
@@ -333,6 +334,16 @@ Class Protocols extends Controller {
                 die('Something went wrong');
             }
         } else {
+            if($this->protocolModel->deleteProtocol($id)){
+                flash('protocol_message', 'Το Πρωτόκολλο '. $protocol->protocolYear .'.'.$protocol->protocolNo . ' Διεγράφη');
+                redirect('protocols');
+            } else {
+                flasherror('protocol_message', 'Σφάλμα! Δεν πραγματοποιήθηκε η διαγραφή');
+                redirect('protocols/show'.$id);
+            }
+        }
+    }
+    else {
             redirect('protocols');
         }
     }
