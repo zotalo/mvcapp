@@ -320,15 +320,15 @@ Class Protocols extends Controller {
                         flash('protocol_message', 'Το Πρωτόκολλο '. $protocol->protocolYear .'.'.$protocol->protocolNo . ' Διεγράφη');
                         redirect('protocols');
                     } else {
-                        flasherror('protocol_message', 'Δεν Πραγματοποιήθηκε η Διαγραφή');
+                        flasherror('protocol_message', 'Δεν Πραγματοποιήθηκε η Διαγραφή!');
                         redirect('protocols/show/'.$id);
                     }
                 } else {
-                    flasherror('protocol_message', 'Δεν Διεγράφη το Αρχείο');
+                    flasherror('protocol_message', 'Δεν πραγματοποιήθηκε η διαγραφή του αρχείου: '.$files->fileName);
                     redirect('protocols/show/'.$id);
                 }
             }else {
-                flasherror('protocol_message', 'Πρόβλημα στη διαγραφή! '.$files->fileName);
+                flasherror('protocol_message', 'Πρόβλημα με τη διαγραφή του αρχείου: '.$files->fileName);
                 redirect('protocols/show/'.$id);
                 die('Something went wrong');
             }
