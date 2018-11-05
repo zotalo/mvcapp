@@ -15,6 +15,7 @@ class Users extends Controller{
             'role' => $_SESSION['user_role'],
             'name' => $_SESSION['user_name'],
             'email' => $_SESSION['user_email'],
+            'status' => $_SESSION['user_status']
             
         ];
         $this->view('users/index', $data);
@@ -167,12 +168,17 @@ class Users extends Controller{
     }
 
     public function createUserSession($user){
-        $_SESSION['user_id'] = $user->userid;
+        $_SESSION['user_id'] = $user->userId;
         $_SESSION['user_email'] = $user->email;
-        $_SESSION['user_name'] = $user->username;
+        $_SESSION['user_name'] = $user->userName;
         $_SESSION['user_role'] = $user->rolesname;
-        $_SESSION['user_role_no'] = $user->userrole;
+        $_SESSION['user_role_no'] = $user->userRole;
+        $_SESSION['user_status'] = $user->userStatus;
+        if($_SESSION['user_status']==0){
+            redirect('users/wait');
+        } else {
         redirect('protocols');
+        }
     }
 
     public function logout(){
@@ -181,6 +187,7 @@ class Users extends Controller{
         unset($_SESSION['user_name']);
         unset($_SESSION['user_role']);
         unset($_SESSION['user_role_no']);
+        unset($_SESSION['user_status']);
         session_destroy();
         redirect('users/login');
     }
@@ -188,7 +195,8 @@ class Users extends Controller{
     public function wait(){
         $data = [
             'title' => 'Αναμονή',
-            'description' => 'Αναμονή'
+            'description' => 'Αναμονή',
+            'status' => 'Ανενεργός'
         ];
         $this->view('users/wait', $data);
     }

@@ -22,9 +22,19 @@ Class Administrators extends Controller {
         $users = $this->userModel->getUsers();
 
         $data = [
-            'users'=>$users,
+            'users'=> $users,
 
         ];
         $this->view('administrators/users', $data);
+    }
+
+    public function show($id){
+        $users = $this->userModel->getUserInfo($id);
+
+        $data = [
+            'title' => 'Πληροφορίες Χρήστη',
+            'users' => $users,
+        ];
+        $this->view('administrators/show', $data);
     }
 }

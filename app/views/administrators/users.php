@@ -14,7 +14,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">
-                <?php echo $user->username; ?>
+                <?php echo $user->userName; ?>
             </h4>
             <h6 class="card-subtitle bg-light p2 mb-3">
             Role: <?php echo $user->rolesname; ?>
@@ -22,7 +22,10 @@
             <p class="card-text">
             Email:  <?php echo $user->email; ?>
             </p>
-            <a href="<?php echo URLROOT; ?>/administrators/show/<?php echo $user->userid; ?>" class="btn btn-dark">Περισσότερα</a>
+            <p class="card-text">
+            Κατάσταση: <?php echo $user->statusDescription; ?>
+            </p>
+            <a href="<?php echo URLROOT; ?>/administrators/show/<?php echo $user->userId; ?>" class="btn btn-dark">Περισσότερα</a>
          </div>
     </div>
 <?php endforeach; ?>

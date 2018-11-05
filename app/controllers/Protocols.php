@@ -5,7 +5,7 @@ Class Protocols extends Controller {
         if(!isLoggedIn()){
             redirect('users/login');
         }
-        else if($_SESSION['user_role_no'] == 0){
+        else if($_SESSION['user_role_no'] == 0 || $_SESSION['user_status'] == 0){
             redirect('users/wait');
         }
         
