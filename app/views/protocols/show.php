@@ -4,11 +4,11 @@
 <br>
 <h1><?php echo $data['protocol']->protocolYear . "." . $data['protocol']->protocolNo. " [" . dateFormat($data['protocol']->protocolDate)."]";?></h1>
 <div class="bg-secondary text-white p-2 mb-3">
-    Δημιουργήθηκε από <?php echo $data['user']->userName; ?> στις <?php echo dateFormatH($data['protocol']->protocolRecordate); ?>
+    Δημιουργήθηκε από <strong><?php echo $data['user']->userName; ?></strong> στις <?php echo dateFormatH($data['protocol']->protocolRecordate); ?>
 </div>
 <?php if($data['protocol']->protocolUpdateUser != null) :?>
 <div class="bg-info text-light p-1 mb-1">
-    Τελευταία ενημέρωση από <?php echo $data['upduser']->userName; ?> στις <?php echo dateFormatH($data['protocol']->protocolUpdateRecordDate); ?>
+    Τελευταία ενημέρωση από <strong><?php echo $data['upduser']->userName; ?></strong> στις <?php echo dateFormatH($data['protocol']->protocolUpdateRecordDate); ?>
 </div>
 <?php endif; ?>
 <div class="">

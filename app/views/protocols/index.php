@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
+<?php header("Refresh: 30;");?>
 <?php flash('protocol_message'); ?>
     <div class="row mb-3">
         <div class="col-md-6">
