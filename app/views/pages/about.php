@@ -4,5 +4,5 @@
 <p>Έκδοση: <strong><?php echo APPVERSION; ?></strong></p>
 <p>Αλλαγές Στην Έκδοση: <strong><?php echo APPCHANGES; ?></strong></p>
 <p>Υπεύθυνος Ανάπτυξης: <strong><?php echo APPDEVELOPER; ?></strong></p>
-<p>Επικοινωνία: Email. <strong><a href="mailto:george.siorokos@soel.gr"><?php echo DEVELOPEREMAIL;?></a></strong> τηλ. <strong><a href="tel:2103891494"><?php echo DEVELOPERPHONE;?></a></strong>
+<p>Επικοινωνία: Email. <strong><a href="mailto:<?php echo DEVELOPEREMAIL;?>"><?php echo DEVELOPEREMAIL;?></a></strong> τηλ. <strong><a href="tel:2103891494"><?php echo DEVELOPERPHONE;?></a></strong>
 <?php require APPROOT . '/views/inc/footer.php';?>
