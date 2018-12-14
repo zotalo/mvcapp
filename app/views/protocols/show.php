@@ -31,8 +31,8 @@
             <input type="submit" class="btn btn-success" value="Ανέβασμα Αρχείου">
         </form>
     <?php else: ?>
-        <p><strong>Επισυναπτόμενο: </strong><a href="<?php echo URLROOT;?>/files/show/<?php echo $data['file'];?>"><?php echo $data['name']; ?></a></p>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-att-modal-lg">
+        <!--p><strong>Επισυναπτόμενο: </strong><a href="<?php echo URLROOT;?>/files/show/<?php echo $data['file'];?>"><?php echo $data['name']; ?></a></p-->
+        <strong>Επισυναπτόμενο: </strong><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-att-modal-lg">
             <?php echo $data['name'];?>
         </button>
 
