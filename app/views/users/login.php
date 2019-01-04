@@ -20,9 +20,9 @@
                     <div class="col">
                         <input type="submit" value="Σύνδεση" class="btn btn-success btn-block">
                     </div>
-                    <div class="col">
+                    <!-- <div class="col">
                         <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light btn-block">Εγγραφή</a>
-                    </div>
+                    </div> -->
                 </div>
                 </form>
             </div>

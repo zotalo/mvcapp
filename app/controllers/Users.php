@@ -21,6 +21,9 @@ class Users extends Controller{
         $this->view('users/index', $data);
     }
     public function register(){
+        if(!isLoggedIn() || $_SESSION['user_role_no'] != 1){
+            redirect('pages/index');
+        }
         //Check for POST
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // Process form
