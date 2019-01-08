@@ -43,6 +43,8 @@ class Users extends Controller{
                 'confirm_password' => trim($_POST['confirm_password']),
                 'roles' => trim($_POST['roles']),
                 'statuses' => trim($_POST['statuses']),
+                'role' => $roles,
+                'status' => $status,
                 'name_err' => '',
                 'email_err' => '',
                 'password_err' => '',
