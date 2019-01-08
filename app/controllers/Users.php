@@ -91,7 +91,7 @@ class Users extends Controller{
 
                 //Register User
                 if($this->userModel->register($data)){
-                    flash('register_success', 'New Account Has Been Created');
+                    flash('register_success', 'Επιτυχής Δημιουργία Νέου Λογαριασμού Χρήστη');
                     redirect('administrators/users');
                 } else {
                     die('Something went wrong');
