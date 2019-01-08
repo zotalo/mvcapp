@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';?>
+<?php flash('register_success'); ?>
 <div class="row mb-3">
     <div class="col-md-6">
         <h1>Χρήστες</h1>
