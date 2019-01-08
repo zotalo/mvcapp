@@ -21,12 +21,13 @@
         }
         //Resgister user
         public function register($data){
-            $this->db->query('INSERT INTO users (userName, email, userHashPass, userRole) VALUES (:name, :email, :password, :role)');
+            $this->db->query('INSERT INTO users (userName, email, userHashPass, userRole, userStatus) VALUES (:name, :email, :password, :role, :status)');
             //Bind values
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':email', $data['email']);
             $this->db->bind(':password', $data['password']);
-            $this->db->bind(':role', 0);
+            $this->db->bind(':role', $data['roles']);
+            $this->db->bind(':status', $data['statuses']);
 
             //Execute
             if($this->db->execute()){

@@ -4,6 +4,7 @@
 class Users extends Controller{
     public function __construct(){
         $this->userModel = $this->model('User');
+        $this->administratorModel = $this->model('Administrator');
     }
     public function index(){
         if(!isLoggedIn()){
@@ -24,6 +25,9 @@ class Users extends Controller{
         if(!isLoggedIn() || $_SESSION['user_role_no'] != 1){
             redirect('pages/index');
         }
+        $roles = $this->administratorModel->getRoles();
+        $status = $this->administratorModel->getStatus();
+
         //Check for POST
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             // Process form
@@ -37,10 +41,14 @@ class Users extends Controller{
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
                 'confirm_password' => trim($_POST['confirm_password']),
+                'roles' => trim($_POST['roles']),
+                'statuses' => trim($_POST['statuses']),
                 'name_err' => '',
                 'email_err' => '',
                 'password_err' => '',
-                'confirm_password_err' => ''
+                'confirm_password_err' => '',
+                'role_err' => '',
+                'status_err' => ''
             ];
 
             // Validate Email
@@ -49,7 +57,7 @@ class Users extends Controller{
             } else {
                 //Check email
                if($this->userModel->findUserByEmail($data['email'])){
-
+                $data['email_err'] = 'User with current email has been already registered';
                } 
             }
             // Validate Name
@@ -73,7 +81,7 @@ class Users extends Controller{
             }
 
             // Make sure errors are empty
-            if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+            if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err']) && empty($data['role_err']) && empty($data['status_err'])){
                 // Validated
                 
                 // Hash Password
@@ -101,7 +109,9 @@ class Users extends Controller{
                 'name_err' => '',
                 'email_err' => '',
                 'password_err' => '',
-                'confirm_password_err' => ''
+                'confirm_password_err' => '',
+                'role' => $roles,
+                'status' => $status
             ];
             // Load view
             $this ->view('users/register', $data);
