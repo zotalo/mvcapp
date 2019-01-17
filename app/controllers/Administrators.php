@@ -37,4 +37,14 @@ Class Administrators extends Controller {
         ];
         $this->view('administrators/show', $data);
     }
+
+    public function edit($id){
+        $users = $this->userModel->getUserInfo($id);
+
+        $data = [
+            'title' => 'Επεξεργασία Χρήστη',
+            'users' => $users,
+        ];
+        $this->view('administrators/edit', $data);
+    }
 }
