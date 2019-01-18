@@ -22,6 +22,7 @@ Class Administrators extends Controller {
         $users = $this->userModel->getUsers();
 
         $data = [
+            'title'=> 'Χρήστες του Συστήματος',
             'users'=> $users,
 
         ];

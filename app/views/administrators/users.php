@@ -2,7 +2,7 @@
 <?php flash('register_success'); ?>
 <div class="row mb-3">
     <div class="col-md-6">
-        <h1>Χρήστες</h1>
+        <h1><?php echo $data['title'];?></h1>
     </div>
     <div class="col-md-6">
         <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-primary pull-right">
