@@ -12,7 +12,7 @@ Class Administrators extends Controller {
 
     public function index(){
         $data = [
-            'title' => 'Administrator',
+            'title' => 'Διαχειριστής Συστήματος',
             'description' => 'Administrator for TEA'
         ];
         $this->view('administrators/index', $data);

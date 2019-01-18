@@ -2,7 +2,7 @@
     <div class="text-center">
         <div class="row mb-3">
             <div class="col-md-6">
-                    <h1>Διαχειριστής</h1>
+                    <h1><?php echo $data['title'];?></h1>
             </div>
         </div> 
         <div class="row justify-content-around">
