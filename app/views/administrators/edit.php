@@ -10,23 +10,23 @@
     <form action="<?php echo URLROOT;?>/administrators/edit/<?php echo $data['users']->userId;?>" method="post">
         <div class="form-group">
             <label for="role">Ρόλος: </label>
-            <select name="role" class="form-control form-control-lg <?echo (!empty($data['roles_err'])) ? 'is-invalid' : '';?>" value="<?php echo $date['roles'];?>">
+            <select name="role" class="form-control form-control-lg <?echo (!empty($data['roles_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['role']->roleid;?>">
                 <?php foreach($data['role'] as $role) : ?>
-                    <option value="<?php echo $role->$rolesid;?>"><?php echo $role->$rolesname;?> </option>
+                    <option value="<?php echo $role->rolesid;?>"><?php echo $role->rolesname;?> </option>
                 <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
         <label for="status">Κατάσταση: </label>
-            <select name="status" class="form-control form-control-lg <?echo (!empty($data['statuses_err'])) ? 'is-invalid' : '';?>" value="<?php echo $date['statuses'];?>">
+            <select name="status" class="form-control form-control-lg <?echo (!empty($data['statuses_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['status']->statusId;?>">
                 <?php foreach($data['status'] as $status) : ?>
-                    <option value="<?php echo $status->$statusid;?>"><?php echo $status->$statusname;?> </option>
+                    <option value="<?php echo $status->statusid;?>"><?php echo $status->statusDescription;?> </option>
                 <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
             <label for="email">Email: </label>
-            <input type="email" name="email" class="form-control form-control-lg">
+            <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['users']->email; ?>">
             <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
         </div>
         <input type="submit" class="btn btn-success" value="Ενημέρωση">

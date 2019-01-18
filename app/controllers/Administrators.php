@@ -41,11 +41,22 @@ Class Administrators extends Controller {
 
     public function edit($id){
         $users = $this->userModel->getUserInfo($id);
-
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            //Sanitize POST array
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            
+            $data = [
+            ];
+        } else {
+        $roles = $this->administratorModel->getRoles();
+        $status = $this->administratorModel->getStatus();   
         $data = [
             'title' => 'Επεξεργασία Χρήστη',
             'users' => $users,
+            'role' => $roles,
+            'status'=> $status
         ];
         $this->view('administrators/edit', $data);
+        }
     }
 }
