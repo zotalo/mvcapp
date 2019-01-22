@@ -37,9 +37,9 @@
           </li>
           
         <?php else : ?>
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Εγγραφή</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Σύνδεση</a>
           </li>
