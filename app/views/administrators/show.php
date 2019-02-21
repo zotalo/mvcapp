@@ -11,4 +11,5 @@
 <p><strong>Κατάσταση Χρήστη: </strong><?php echo $data['users']->statusDescription;?></p>
 <p><strong>Email: </strong><?php echo $data['users']->email;?></p>
 <a href="<?php echo URLROOT;?>/administrators/edit/<?php echo $data['users']->userId; ?>" class="btn btn-dark">Επεξεργασία</a>
+<a href="<?php echo URLROOT;?>/administrators/reset/<?php echo $data['users']->userId; ?>" class="btn btn-dark">Επαναφορά Κωδικού</a>
 <?php require APPROOT . '/views/inc/footer.php';?>

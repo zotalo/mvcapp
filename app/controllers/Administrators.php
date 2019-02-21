@@ -59,4 +59,15 @@ Class Administrators extends Controller {
         $this->view('administrators/edit', $data);
         }
     }
+    public function reset($id){
+        $users = $this->userModel->getUserInfo($id);
+        $data = [
+            'title' => 'Επαναφορά Κωδικού Πρόσβασης Χρήστη',
+            'users' => $users,
+        ];
+        $this->view('administrators/reset', $data);
+    }
+    public function resetUserPassword($id){
+
+    }
 }

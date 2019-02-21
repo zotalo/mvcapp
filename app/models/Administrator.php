@@ -21,4 +21,20 @@ Class Administrator {
         $results = $this->db->resultSet();
         return $results;
     }
+
+    public function updateUserPassword($id, $password){
+        $this->db->query('UPDATE users
+                        SET userHashPass = :hashedPass
+                        WHERE userid = :userid
+        ');
+        //Bind Values
+        $this->db->bind(':hashedPass', $password);
+        $this->db->bind(':userid', $id);
+        //Execute
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
