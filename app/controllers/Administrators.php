@@ -61,11 +61,32 @@ Class Administrators extends Controller {
     }
     public function reset($id){
         $users = $this->userModel->getUserInfo($id);
-        $data = [
-            'title' => 'Επαναφορά Κωδικού Πρόσβασης Χρήστη',
-            'users' => $users,
-        ];
-        $this->view('administrators/reset', $data);
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $data = [
+                'resetPass' => generatePassword(),
+                'id' => $id,
+                'resetPassHash' => '',
+            ];
+            //Hash Password
+            $data['resetPassHash'] = password_hash($data['resetPass'], PASSWORD_DEFAULT);
+
+            if($this->administratorModel->updateUserPassword($data['id'], $data['resetPassHash'])){
+                flash('administrator_message', $data['resetPass']);
+                redirect('administrators/show/'.$id);
+            } else {
+                die('Something went wrong');
+            }
+
+            
+        }
+        
+        else {
+            $data = [
+                'title' => 'Επαναφορά Κωδικού Πρόσβασης Χρήστη',
+                'users' => $users,
+            ];
+            $this->view('administrators/reset', $data);
+        }
     }
     public function resetUserPassword($id){
 

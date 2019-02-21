@@ -7,4 +7,11 @@
 </div>
 <?php echo generatePassword();
 ?>
+<form action="<?php echo URLROOT;?>/administrators/reset/<?php echo $data['users']->userId; ?>" method = "post">
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Επαναφορά" class="btn btn-success btn-block">
+        </div>
+    </div>
+</form>
 <?php require APPROOT . '/views/inc/footer.php';?>
