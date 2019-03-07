@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-<div class="container">
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark mb-3">
+
       <a class="navbar-brand" href="<?php echo URLROOT; ?>"><img src="<?php echo URLROOT;?>/img/tea.png" alt="tea" height="40" width="40"/><?php echo SITENAME;?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
           <li class="nav-item dropdown" data-hover="dropdown">
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">Σχετικά</a>
             <ul class="dropdown-menu bg-dark">
-              <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/versions">Εκδόσεις</a></li>
+              <li class="dropdown-item bg-dark"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/versions">Εκδόσεις</a></li>
             </ul>
           </li>
         </ul>
@@ -48,6 +48,5 @@
           </li>
         <?php endif; ?>
         </ul>
-      </div>
       </div>
     </nav>
