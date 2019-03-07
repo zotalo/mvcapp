@@ -10,7 +10,7 @@ Class Administrator {
     public function getRoles(){
         $this->db->query('SELECT *
                         FROM roles
-                        order by rolesid');
+                        ORDER BY rolesid');
         $results = $this->db->resultSet();
         return $results;
     }

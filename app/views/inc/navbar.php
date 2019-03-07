@@ -18,8 +18,11 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo URLROOT; ?>/files/index">Αρχεία</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item dropdown" data-hover="dropdown">
             <a class="nav-link" href="<?php echo URLROOT; ?>/pages/about">Σχετικά</a>
+            <ul class="dropdown-menu bg-dark">
+              <li class="nav-item"><a class="nav-link" href="<?php echo URLROOT; ?>/pages/versions">Εκδόσεις</a></li>
+            </ul>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
