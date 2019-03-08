@@ -91,4 +91,12 @@ Class Administrators extends Controller {
     public function resetUserPassword($id){
 
     }
+
+    public function system(){
+        $data = [
+            'title' => 'Παραμέτροι Συστήματος',
+            'description' => 'Παραμέτροι, καταχωρίσεις ενημερώσεων και εκδόσεων',
+        ];
+        $this->view('administrators/system', $data);
+    }
 }
