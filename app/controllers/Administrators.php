@@ -8,6 +8,7 @@ Class Administrators extends Controller {
         }
         $this->administratorModel = $this->model('Administrator');
         $this->userModel = $this->model('User');
+        $this->pageModel = $this->model('Page');
     }
 
     public function index(){
@@ -98,5 +99,31 @@ Class Administrators extends Controller {
             'description' => 'Παραμέτροι, καταχωρίσεις ενημερώσεων και εκδόσεων',
         ];
         $this->view('administrators/system', $data);
+    }
+
+    public function versioning(){
+        $versions = $this->pageModel->getVersions();
+        $data = [
+            'title' => 'Εκδόσεις',
+            'description' => 'Προσθήκη - Επεξεργασία Εκδόσεων',
+            'versions' => $versions,
+        ];
+        $this->view('administrators/versioning', $data);
+    }
+
+    public function versionshow(){
+        $data = [
+            'title' => 'Προβολή Έκδοσης',
+            'description' => 'Διαχείριση Έκδοσης',
+        ];
+        $this->view('administrators/versionshow', $data);
+    }
+
+    public function versionadd(){
+        $data = [
+            'title' => 'Προσθήκη Έκδοσης',
+            'description' => 'Προσθήκη Νέας Έκδοσης',
+        ];
+        $this->view('administrators/versionadd', $data);
     }
 }
