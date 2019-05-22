@@ -10,9 +10,9 @@
     <form action="<?php echo URLROOT;?>/administrators/edit/<?php echo $data['users']->userId;?>" method="post">
         <div class="form-group">
             <label for="role">Ρόλος: </label>
-            <select name="role" class="form-control form-control-lg <?echo (!empty($data['roles_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['role']->roleid;?>">
+            <select name="role" class="form-control form-control-lg <?echo (!empty($data['roles_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['roles']->rolesid;?>">
                 <?php foreach($data['role'] as $role) : ?>
-                    <option value="<?php echo $role->rolesid;?>"><?php echo $role->rolesname;?> </option>
+                    <option value="<?php echo $role->rolesid;?>"<?php if($role->rolesid == $data['users']->userRole){echo "selected";}?>><?php echo $role->rolesname;?> </option>
                 <?php endforeach; ?>
             </select>
         </div>
@@ -20,7 +20,7 @@
         <label for="status">Κατάσταση: </label>
             <select name="status" class="form-control form-control-lg <?echo (!empty($data['statuses_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['status']->statusId;?>">
                 <?php foreach($data['status'] as $status) : ?>
-                    <option value="<?php echo $status->statusid;?>"><?php echo $status->statusDescription;?> </option>
+                    <option value="<?php echo $status->statusId;?>"<?php if($status->statusId == $data['users']->userStatus){echo "selected";}?>><?php echo $status->statusDescription;?> </option>
                 <?php endforeach; ?>
             </select>
         </div>
