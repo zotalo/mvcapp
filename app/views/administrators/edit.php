@@ -10,7 +10,7 @@
     <form action="<?php echo URLROOT;?>/administrators/edit/<?php echo $data['users']->userId;?>" method="post">
         <div class="form-group">
             <label for="role">Ρόλος: </label>
-            <select name="role" class="form-control form-control-lg <?echo (!empty($data['roles_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['roles']->rolesid;?>">
+            <select name="role" class="form-control form-control-lg <?echo (!empty($data['roles_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['role']->rolesid;?>">
                 <?php foreach($data['role'] as $role) : ?>
                     <option value="<?php echo $role->rolesid;?>"<?php if($role->rolesid == $data['users']->userRole){echo "selected";}?>><?php echo $role->rolesname;?> </option>
                 <?php endforeach; ?>
