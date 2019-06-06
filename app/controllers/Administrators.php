@@ -47,6 +47,10 @@ Class Administrators extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             
             $data = [
+            'role' => trim($_POST['role']),
+            'status' => trim($_POST['status']),
+            'email' => trim($_POST['email']),
+            'email_err' => '',
             ];
         } else {
         $roles = $this->administratorModel->getRoles();
