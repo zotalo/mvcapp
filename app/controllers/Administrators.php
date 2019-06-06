@@ -47,11 +47,29 @@ Class Administrators extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             
             $data = [
-            'role' => trim($_POST['role']),
-            'status' => trim($_POST['status']),
-            'email' => trim($_POST['email']),
-            'email_err' => '',
+                'id' => $id,
+                'role' => trim($_POST['role']),
+                'status' => trim($_POST['status']),
+                'email' => trim($_POST['email']),
+                'email_err' => '',
             ];
+
+            // Make sure errors are empty
+            if(empty($data['email_err'])){
+                // Validated
+                
+
+                //Update user
+                if($this->userModel->updateUser($data)){
+                    flash('register_success', 'Επιτυχής Ενημέρωση Λογαριασμού Χρήστη');
+                    redirect('administrators/users');
+                } else {
+                    die('Something went wrong');
+                }
+            } else {
+                // Load view with errors
+                $this->view('administrators/edit', $data);
+            }
         } else {
         $roles = $this->administratorModel->getRoles();
         $status = $this->administratorModel->getStatus();   

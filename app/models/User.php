@@ -132,4 +132,21 @@
             return false;
         }
     }
+    public function updateUser($data){
+        $this->db->query('UPDATE users
+                        SET userRole = :role, 
+                        userStatus = :status,
+                        email = :email
+                        WHERE userId = :id');
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':role', $data['role']);
+        $this->db->bind(':status', $data['status']);
+        $this->db->bind(':email', $data['email']);
+
+        if($this->db->execute()){
+            return true;
+        } else {
+            return false;
+        }
+    }
     }
