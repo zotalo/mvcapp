@@ -1,6 +1,8 @@
 <?php require APPROOT . '/views/inc/header.php';?>
+<a class="navbar-brand" href="<?php echo URLROOT; ?>"><img src="<?php echo URLROOT;?>/img/tea.png" alt="tea" height="40" width="40"/><?php echo SITENAME;?></a>
     <div class="row">
         <div class="col-md-6 mx-auto">
+        
             <div class="card card-body bg-light mt-5">
                 <?php flash('register_success'); ?>
                 <h2>Σύνδεση</h2>
