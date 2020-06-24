@@ -47,7 +47,7 @@
         </div>
     </div>
     <script>
-    var auto = <?php echo $data['autofromto'];?>
-    autocomplete(document.getElementById("myInput"), auto);
+    <?php $auto[] =  $data['autofromto'];?>
+    autocomplete(document.getElementById("myInput"), <?php $auto?>);
 </script>
 <?php require APPROOT . '/views/inc/footer.php';?>

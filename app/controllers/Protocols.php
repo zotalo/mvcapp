@@ -103,9 +103,10 @@ Class Protocols extends Controller {
             'nodoc'=> '',
             'idate'=> '',
             // 'file'=> '',
-            'autofromto' => 'test',
         ];
+       
         $this->view('protocols/add', $data);
+        $this->view('protocols/add', $autocomplete[]);
         }
     }
 
