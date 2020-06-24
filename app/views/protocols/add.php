@@ -3,7 +3,7 @@
 <div class="card card-body bg-light mt-5">
             <h2>Νέο Πρωτόκολλο</h2>
             <p>Δημιουργία</p>
-            <form action="<?php echo URLROOT; ?>/protocols/add" method="post">
+            <form autocomplete="off" action="<?php echo URLROOT; ?>/protocols/add" method="post">
             <div class="form-group">
                 <label for="subject">Θέμα: <sup>*</sup></label>
                 <input type="text" name="subject" class="form-control form-control-lg <?php echo (!empty($data['subject_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['subject']; ?>">
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="fromto">Από/Προς: <sup>*</sup></label>
-                <input type="text" name="fromto" class="form-control form-control-lg <?php echo (!empty($data['fromto_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['fromto'];?>">
+                <input id="myInput" type="text" name="fromto" class="form-control form-control-lg <?php echo (!empty($data['fromto_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['fromto'];?>">
                 <span class="invalid-feedback"><?php echo $data['fromto_err']; ?></span>
             </div>
             <div class="form-group">
@@ -46,4 +46,8 @@
             </form>
         </div>
     </div>
+    <script>
+    var auto = <?php echo $data['autofromto'];?>
+    autocomplete(document.getElementById("myInput"), auto);
+</script>
 <?php require APPROOT . '/views/inc/footer.php';?>

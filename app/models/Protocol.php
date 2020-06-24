@@ -145,4 +145,13 @@
             $last = $this->db->getLastId();
             return $last;
         }
+
+// Function to return the results from View autocompleteFromTo that are generated from distinct protocolFromTo
+
+        public function autoComplete(){
+            $this->db->query('SELECT * FROM autocompleteFromTo');
+
+            $results = $this->db->resultSet();
+            return $results;
+        }
     }

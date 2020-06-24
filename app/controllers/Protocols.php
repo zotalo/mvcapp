@@ -94,6 +94,7 @@ Class Protocols extends Controller {
         }
         
     } else {
+        $autofromto = $this->protocolModel->autoComplete();
         $data = [
             'subject'=> '',
             'pdate'=> getCurrentDate(),
@@ -102,6 +103,7 @@ Class Protocols extends Controller {
             'nodoc'=> '',
             'idate'=> '',
             // 'file'=> '',
+            'autofromto' => 'test',
         ];
         $this->view('protocols/add', $data);
         }
