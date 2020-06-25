@@ -21,7 +21,7 @@
                 <input type="date" name="pdate" data-date-format="dd/mm/yyyy" class="form-control form-control-lg <?php echo (!empty($data['pdate_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['pdate'];?>">
                 <span class="invalid-feedback"><?php echo $data['pdate_err']; ?></span>
             </div>
-            <div class="form-group">
+            <div class="form-group autocomplete">
                 <label for="fromto">Από/Προς: <sup>*</sup></label>
                 <input id="myInput" type="text" name="fromto" class="form-control form-control-lg <?php echo (!empty($data['fromto_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['fromto'];?>">
                 <span class="invalid-feedback"><?php echo $data['fromto_err']; ?></span>
@@ -47,7 +47,7 @@
         </div>
     </div>
     <?php $jsdata = json_encode($this->autocomplete);?>
-    <?php var_dump($jsdata);?>
+    <?php //var_dump($jsdata);?>
     <script type="text/javascript">
         var js_data = <?php echo $jsdata?>;
         var auto = [];
