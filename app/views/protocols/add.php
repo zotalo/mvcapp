@@ -47,7 +47,6 @@
         </div>
     </div>
     <?php $jsdata = json_encode($this->autocomplete);?>
-    <?php //var_dump($jsdata);?>
     <script type="text/javascript">
         var js_data = <?php echo $jsdata?>;
         var auto = [];
