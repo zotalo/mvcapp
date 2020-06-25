@@ -46,8 +46,14 @@
             </form>
         </div>
     </div>
-    <script>
-    <?php $auto[] =  $data['autofromto'];?>
-    autocomplete(document.getElementById("myInput"), <?php $auto?>);
-</script>
+    <?php $jsdata = json_encode($this->autocomplete);?>
+    <?php var_dump($jsdata);?>
+    <script type="text/javascript">
+        var js_data = <?php echo $jsdata?>;
+        var auto = [];
+        for (var i = 0; i <js_data.length; i++){
+            auto[i] = js_data[i]["protocolFromTo"]
+        }
+        autocomplete(document.getElementById("myInput"), auto);
+    </script>
 <?php require APPROOT . '/views/inc/footer.php';?>

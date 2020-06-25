@@ -13,7 +13,7 @@ Class Protocols extends Controller {
         $this->userModel = $this->model('User');
         $this->fileModel = $this->model('File');
     }
-
+    public $autocomplete;
     public function index(){
         //Get Protocols
         $currentyear = getCurrentYear();
@@ -102,11 +102,14 @@ Class Protocols extends Controller {
             'fromto'=> '',
             'nodoc'=> '',
             'idate'=> '',
-            // 'file'=> '',
         ];
-       
+
+       $this->autocomplete = array();
+       foreach($autofromto as $key => $val){
+           $this->autocomplete[] = $val;
+       }
         $this->view('protocols/add', $data);
-        $this->view('protocols/add', $autocomplete[]);
+        // $this->view('protocols/add', $autocomplete);
         }
     }
 
